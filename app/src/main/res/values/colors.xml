@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="seed">#163754</color>
+    <color name="seed_dark">#89C7EB</color>
+    <color name="surfaceContainer">#EEF4F8</color>
+    <color name="auth_bg_top">#F7EDE0</color>
+    <color name="auth_bg_bottom">#DCE9F3</color>
+    <color name="auth_panel">#FDFEFF</color>
+    <color name="auth_panel_stroke">#D7E2EB</color>
+    <color name="auth_panel_shadow">#0F2F4A</color>
+    <color name="auth_text_primary">#12324A</color>
+    <color name="auth_text_secondary">#6A8094</color>
+    <color name="auth_text_muted">#88A0B3</color>
+    <color name="auth_accent">#155F93</color>
+    <color name="auth_accent_dark">#0E4368</color>
+    <color name="auth_accent_soft">#D7EAF8</color>
+    <color name="auth_badge_bg">#12324A</color>
+    <color name="auth_badge_text">#FFF8EF</color>
+    <color name="auth_orb_outer">#E0AA62</color>
+    <color name="auth_orb_inner">#FFF6EA</color>
+    <color name="auth_loading_track">#D3E7F6</color>
+    <color name="auth_input_fill">#F8FBFE</color>
+    <color name="auth_input_stroke">#C8D8E5</color>
+    <color name="auth_input_stroke_focused">#2D77A5</color>
+    <color name="auth_input_hint">#6F879B</color>
+    <color name="auth_input_text">#12324A</color>
+    <color name="auth_button_primary">#1D6FA4</color>
+    <color name="auth_button_primary_pressed">#155982</color>
+    <color name="auth_button_primary_text">#F8FCFF</color>
+    <color name="auth_button_secondary">#E4EDF7</color>
+    <color name="auth_button_secondary_text">#12324A</color>
+    <color name="auth_button_outline">#B5C8D9</color>
+    <color name="auth_button_outline_text">#285674</color>
+    <color name="auth_scrim">#BF12324A</color>
+    <color name="auth_loading_card">#F7FBFF</color>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
+    <restriction
+        android:key="api_key"
+        android:restrictionType="string"
+        android:title="@string/managed_config_api_key_title" />
+
+    <restriction
+        android:key="device_id"
+        android:restrictionType="string"
+        android:title="@string/managed_config_device_id_title" />
+
+    <restriction
+        android:key="uuid"
+        android:restrictionType="string"
+        android:title="@string/managed_config_uuid_title" />
+
+    <restriction
+        android:key="role_one_label"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_one_label_title" />
+
+    <restriction
+        android:key="role_two_label"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_two_label_title" />
+
+    <restriction
+        android:key="role_one_group_id"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_one_group_title" />
+
+    <restriction
+        android:key="role_two_group_id"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_two_group_title" />
+
+    <restriction
+        android:key="role_one_password"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_one_password_title" />
+
+    <restriction
+        android:key="role_two_password"
+        android:restrictionType="string"
+        android:title="@string/managed_config_role_two_password_title" />
+
+    <restriction
+        android:key="zebra_lockscreen_uri"
+        android:defaultValue="content://com.zebra.mdna.els.provider/lockscreenstatus/state"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_lockscreen_uri_title" />
+
+    <restriction
+        android:key="zebra_current_session_uri"
+        android:defaultValue="content://com.zebra.mdna.els.provider/v2/currentsession"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_current_session_uri_title" />
+
+    <restriction
+        android:key="zebra_role_field"
+        android:defaultValue="userRole"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_role_field_title" />
+
+    <restriction
+        android:key="zebra_user_id_field"
+        android:defaultValue="userId"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_user_id_field_title" />
+
+    <restriction
+        android:key="zebra_event_type_field"
+        android:defaultValue="eventType"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_event_type_field_title" />
+
+    <restriction
+        android:key="zebra_logged_in_state_field"
+        android:defaultValue="userLoggedInState"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_logged_in_state_field_title" />
+
+    <restriction
+        android:key="zebra_login_state_value"
+        android:defaultValue="HIDDEN"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_login_state_value_title" />
+
+    <restriction
+        android:key="zebra_logout_state_value"
+        android:defaultValue="SHOWN"
+        android:restrictionType="string"
+        android:title="@string/managed_config_zebra_logout_state_value_title" />
+</restrictions>

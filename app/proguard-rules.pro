@@ -1,0 +1,3 @@
+-keep class io.esper.devicesdk.** { *; }
+-keep class io.esper.devicesdk.models.** { *; }
+-keep class com.zebra.mdna.** { *; }

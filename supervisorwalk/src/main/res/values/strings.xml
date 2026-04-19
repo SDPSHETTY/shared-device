@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Store Walk</string>
+    <string name="status_badge">Supervisor View</string>
+    <string name="hero_title">Keep every aisle visit tight</string>
+    <string name="hero_subtitle">A lightweight demo shell for supervisors reviewing compliance, recovery, and handoff notes on Zebra devices.</string>
+    <string name="card_one_kicker">Daily routines</string>
+    <string name="card_one_title">Audit checkpoints</string>
+    <string name="card_one_body">Displays opening walk status, price sign follow-up, and quick notes from area owners.</string>
+    <string name="card_two_kicker">Leadership handoff</string>
+    <string name="card_two_title">Exceptions log</string>
+    <string name="card_two_body">Captures store issues, queue alerts, and next-shift handoff items for fast coverage.</string>
+</resources>

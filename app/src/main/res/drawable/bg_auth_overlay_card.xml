@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="24dp" />
+    <gradient
+        android:angle="315"
+        android:endColor="@color/auth_loading_card"
+        android:startColor="@color/auth_panel" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/auth_panel_stroke" />
+</shape>

@@ -1,0 +1,730 @@
+--------- beginning of system
+04-19 15:09:09.571  1559  6617 W ActivityTaskManager: callingPackage for (uid=2000, pid=30289) has no WPC
+--------- beginning of main
+04-19 15:09:09.583  1559  6617 D ActivityTrigger: ActivityTrigger activityPauseTrigger 
+04-19 15:09:09.588  4047  4089 V WindowManagerShell: Transition requested: android.os.BinderProxy@b937dca TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=41 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.esper.authapp/.ui.ConfigActivity } baseActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} topActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} origActivity=null realActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} numActivities=1 lastActiveTime=2769061 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@25c4b3b} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{ada3258 com.esper.authapp.ui.ConfigActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+04-19 15:09:09.589  1559  6617 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=com.esper.authapp/.ui.ConfigActivity} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+04-19 15:09:09.596 20421 20421 D Dashboard: onPause: 
+04-19 15:09:09.597 20421 20557 D PersistentLogger: flush: called
+04-19 15:09:09.597  1559  6878 D ActivityTaskManager: activityPaused = android.app.IActivityClientController$Stub.onTransact:670 com.android.server.wm.ActivityClientController.onTransact:173 android.os.Binder.execTransactInternal:1344 android.os.Binder.execTransact:1275 <bottom of call stack> <bottom of call stack> <bottom of call stack> <bottom of call stack> <bottom of call stack> <bottom of call stack> 
+04-19 15:09:09.597  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+04-19 15:09:09.597  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+04-19 15:09:09.598  1228 15528 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+04-19 15:09:09.598  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+04-19 15:09:09.599 15424 15532 I bt_stack: [INFO:btm_ble_gap.cc(3326)] btm_ble_process_adv_pkt_cont Data Complete 52:b7:d9:5a:0e:d3
+04-19 15:09:09.599 15424 15532 I bt_stack: [INFO:btm_ble_gap.cc(3326)] btm_ble_process_adv_pkt_cont Data Complete 52:b7:d9:5a:0e:d3
+04-19 15:09:09.599 15424 15532 D bt_btm_ble: bool parse_adv_audio_uuids_from_adv_pkt(const uint8_t *, size_t, uint8_t): tmap_cap_pts: false
+04-19 15:09:09.599 15424 15532 D bt_btm_ble: bool parse_adv_audio_uuids_from_adv_pkt(const uint8_t *, size_t, uint8_t): tmap_cap_pts: false
+04-19 15:09:09.599  4047  4103 D VRI[authapp]: zwctaskbarheight = -1
+04-19 15:09:09.600  4047  4103 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: -1
+04-19 15:09:09.600  1559  6878 D ActivityTaskManager: ActivityRecord r = ActivityRecord{8ef8889 u0 io.shoonya.shoonyadpc/com.shoonyaos.shoonyadpc.activities.Dashboard t8}
+04-19 15:09:09.600 15424 15512 D BluetoothRemoteDevices:  getMappingAddr null
+04-19 15:09:09.600 15424 15512 D BluetoothAdapterService: getIdentityAddress null retruning 52:B7:D9:5A:0E:D3
+04-19 15:09:09.600 15424 15512 W BluetoothAdapterService: getBleScanRssiRangeFilterForPackage
+04-19 15:09:09.605  1559  6878 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.605  1559  6878 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.607 19654 30259 I NearbyDiscovery: (REDACTED) loadFastPairModule: checkFeaturesAreAvailable:%d
+04-19 15:09:09.607 19654 30259 I NearbyDiscovery: loadFastPairModule: FastPair module is downloaded. [CONTEXT service_id=265 ]
+04-19 15:09:09.607 19654 19841 I NearbyDiscovery: (REDACTED) BloomFilterAdvManager: Detected bloom filter but too far away, ignoring. %sm, %s
+04-19 15:09:09.607  1559  4048 D CoreBackPreview: Window{a0f9ea9 u0 Splash Screen com.esper.authapp}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@518715c, mPriority=0, mIsAnimationCallback=false}
+04-19 15:09:09.608  1559  2019 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10276; state: DISABLED
+04-19 15:09:09.608  1559  2019 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10276; state: DISABLED
+04-19 15:09:09.608  1559  2019 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10276; state: DISABLED
+04-19 15:09:09.608  1559  2019 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10276; state: ENABLED
+04-19 15:09:09.609  1559  2047 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10276; state: ENABLED
+04-19 15:09:09.609  1347  1347 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+04-19 15:09:09.609  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.610  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.610  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.610  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.610  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.610  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.610  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.610  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.613  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.613  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.615  4047  4116 E OpenGLRenderer: Unable to match the desired swap behavior.
+04-19 15:09:09.628  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.628  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.628  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.628  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.629  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.629  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.629  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.629  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.629  1559  2340 D ZebraDisplayServiceFw: isZwcInstalledAndDesktopModeEnabled false
+04-19 15:09:09.631  1102  1102 D Zygote  : Forked child process 30294
+04-19 15:09:09.632  1559  2047 I ActivityManager: Start proc 30294:com.esper.authapp/u0a276 for next-top-activity {com.esper.authapp/com.esper.authapp.ui.ConfigActivity}
+04-19 15:09:09.633  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.633  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.633  1559  1999 V WindowManager: Sent Transition #123 createdAt=04-19 15:09:09.574 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=41 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.esper.authapp/.ui.ConfigActivity } baseActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} topActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} origActivity=null realActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} numActivities=1 lastActiveTime=2769061 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{e77ddeb Task{539c3e2 #41 type=standard A=10276:com.esper.authapp}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{47ba306 com.esper.authapp.ui.ConfigActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+04-19 15:09:09.633  1559  1999 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+04-19 15:09:09.633  4047  4089 V WindowManagerShell: onTransitionReady android.os.BinderProxy@b937dca: {id=123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@e68e79c} m=OPEN f=NONE leash=Surface(name=Task=41)/@0x75263e9 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7e455a5} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x7bbb86e sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:09.633  1559  1999 V WindowManager:     info={id=123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{e77ddeb Task{539c3e2 #41 type=standard A=10276:com.esper.authapp}}} m=OPEN f=NONE leash=Surface(name=Task=41)/@0x71a7c65 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{RemoteToken{bfc4c53 Task{f91660 #1 type=home}}} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0xb57924 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:09.633  4047  4089 V WindowManagerShell: Playing animation for (#123)android.os.BinderProxy@b937dca@0
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@bf820bb
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@e4119d8
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@ca80131
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@cba016
+04-19 15:09:09.633  4047  4089 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@87e0d97
+04-19 15:09:09.633  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@f99fb84
+04-19 15:09:09.634  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@b4a7f6d
+04-19 15:09:09.634  4047  4089 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@e68e79c} m=OPEN f=NONE leash=Surface(name=Task=41)/@0x75263e9 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7e455a5} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x7bbb86e sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:09.634  4047  4089 V WindowManagerShell:  Delegate animation for #123 to null
+04-19 15:09:09.634  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@cd9a7a2
+04-19 15:09:09.634  4047  4089 V WindowManagerShell: start default transition animation, info = {id=123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@e68e79c} m=OPEN f=NONE leash=Surface(name=Task=41)/@0x75263e9 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7e455a5} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x7bbb86e sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:09.634  4047  4089 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@872792b animAttr=0x9 type=OPEN isEntrance=false
+04-19 15:09:09.634 19690 30162 D AdvertisingIdClient: AdvertisingIdClient already created.
+04-19 15:09:09.634 19690 30162 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+04-19 15:09:09.635  4047  4089 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@aee6746 animAttr=0x8 type=OPEN isEntrance=true
+04-19 15:09:09.636  1559  2020 D WindowManager: displayId: 0
+04-19 15:09:09.636  1559  2020 D WindowManager: isFullscreen: false isImmersive: false
+04-19 15:09:09.636  1559  2020 D WindowManager: mLastFocusIsFullscreen: false mLastImmersiveMode: false
+04-19 15:09:09.636  1559  2020 D WindowManager: mFocusedWindow: null
+04-19 15:09:09.636  1559  2020 D WindowManager: mLastFocusedWindow: Window{f7c2197 u0 io.shoonya.shoonyadpc/com.shoonyaos.shoonyadpc.activities.Dashboard}
+04-19 15:09:09.636  1559  2020 D WindowManager: mLastFocusIsImmersiveAndFullscreen: false
+04-19 15:09:09.636  1559  2020 D WindowManager: mLastWindowClosed: null
+04-19 15:09:09.637  4047  4089 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@cd9a7a2
+04-19 15:09:09.639  4047  4089 D ZebraDisplayServiceFw: isZwcInstalledAndDesktopModeEnabled false
+04-19 15:09:09.646  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+04-19 15:09:09.646  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+04-19 15:09:09.649 19690 30162 D AdvertisingIdClient: AdvertisingIdClient is bounded
+04-19 15:09:09.650 30294 30294 I m.esper.authapp: Using CollectorTypeCC GC.
+04-19 15:09:09.651 19690 30162 I AdvertisingIdClient: shouldSendLog 1335117
+04-19 15:09:09.651 19690 30162 I AdvertisingIdClient: GetInfoInternal elapse 17ms
+04-19 15:09:09.652 30294 30294 E m.esper.authapp: Not starting debugger since process cannot load the jdwp agent.
+04-19 15:09:09.664  1559  4048 D CompatibilityInfo: mCompatibilityFlags - 0
+04-19 15:09:09.664  1559  4048 D CompatibilityInfo: applicationDensity - 480
+04-19 15:09:09.664  1559  4048 D CompatibilityInfo: applicationScale - 1.0
+04-19 15:09:09.670  4047  4089 V WindowManagerShell: Transition requested: android.os.BinderProxy@33d191e TransitionRequestInfo { type = TO_FRONT, triggerTask = TaskInfo{userId=0 taskId=41 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.esper.authapp/.ui.ConfigActivity } baseActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} topActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} origActivity=null realActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} numActivities=1 lastActiveTime=2769061 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@9df05ff} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{a036fcc com.esper.authapp.ui.ConfigActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+04-19 15:09:09.672  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.672  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.674 30294 30294 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10276; state: ENABLED
+04-19 15:09:09.674 30294 30294 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10276; state: DISABLED
+04-19 15:09:09.679  1559  4615 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10276; state: ENABLED
+04-19 15:09:09.680  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.681  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.681  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.681  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.681  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.682  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.682  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.682  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.682  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.682  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.682  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.682  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.683  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.683  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.684  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.684  4047  4089 V WindowManagerShell: onTransitionReady android.os.BinderProxy@33d191e: {id=124 t=TO_FRONT f=0x0 trk=0 r=[] c=[]}
+04-19 15:09:09.684  4047  4089 V WindowManagerShell: No transition roots in (#124)android.os.BinderProxy@33d191e@0 so abort
+04-19 15:09:09.684  4047  4089 V WindowManagerShell: Transition was merged: (#124)android.os.BinderProxy@33d191e@0 into (#123)android.os.BinderProxy@b937dca@0
+04-19 15:09:09.684  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{91ec9d1 #u0a172/-45 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m22s204ms:-44m22s204ms READY}
+04-19 15:09:09.685  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.685  1559  1999 V WindowManager: Sent Transition #124 createdAt=04-19 15:09:09.668 via request=TransitionRequestInfo { type = TO_FRONT, triggerTask = TaskInfo{userId=0 taskId=41 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.esper.authapp/.ui.ConfigActivity } baseActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} topActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} origActivity=null realActivity=ComponentInfo{com.esper.authapp/com.esper.authapp.ui.ConfigActivity} numActivities=1 lastActiveTime=2769061 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{e77ddeb Task{539c3e2 #41 type=standard A=10276:com.esper.authapp}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{47ba306 com.esper.authapp.ui.ConfigActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+04-19 15:09:09.685  1559  1999 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+04-19 15:09:09.685  1559  1999 V WindowManager:     info={id=124 t=TO_FRONT f=0x0 trk=0 r=[] c=[]}
+04-19 15:09:09.685  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.685  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.686  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.686  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.686  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{8635ce5 #u0a172/-47 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s519ms:-44m31s519ms NET READY}
+04-19 15:09:09.686  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.687  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.687  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.688  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.688  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.688  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{3224a47 #u0a172/-151 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s515ms:-43m31s515ms READY}
+04-19 15:09:09.688  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.688  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.689 30294 30294 D nativeloader: Configuring clns-6 for other apk /data/app/~~KqlTC6oPC2U7AdjMHX1Ymg==/com.esper.authapp-rKwQU8QBtp-NVqlyMhR5jA==/base.apk. target_sdk_version=33, uses_libraries=, library_path=/data/app/~~KqlTC6oPC2U7AdjMHX1Ymg==/com.esper.authapp-rKwQU8QBtp-NVqlyMhR5jA==/lib/arm64, permitted_path=/data:/mnt/expand:/data/user/0/com.esper.authapp
+04-19 15:09:09.689  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.689  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.689  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.689  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{12bac09 #u0a172/-163 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s466ms:-44m31s466ms READY}
+04-19 15:09:09.690  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.690  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.690  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.690  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.691  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.691  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{d673b26 #u0a172/-49 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-43m59s763ms:-43m4s763ms IDLE READY}
+04-19 15:09:09.691  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.691  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.691  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.692  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.693  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:09.693  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{59c6d7a #u0a172/-353 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m4s316ms:+5h15m55s684ms NET READY}
+04-19 15:09:09.695  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.695  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.697 30294 30294 I Perf    : Connecting to perf service.
+04-19 15:09:09.697  4451 10352 D f       : componentInfo - com.esper.authapp.ui.ConfigActivity
+04-19 15:09:09.697  4451 10352 D f       : getForegroundActivity changed
+04-19 15:09:09.698  6688  6724 D ActivityChangeNotifier: onActivityChange
+04-19 15:09:09.698  6688 30312 D ActivityChangeNotifier: getCurrentActivity
+04-19 15:09:09.700  6688 30312 D TAG     : Process Activity Change
+04-19 15:09:09.700  6688  7589 I ActivityTracker: #DW# Activity Tracker sync shutdown : [START]
+04-19 15:09:09.700  6688  7589 I ActivityTracker: #DW# Activity Tracker sync shutdown : [FINISH]
+04-19 15:09:09.700  6688  7589 I ActivityTracker: #DW# handle new activity: [START]
+04-19 15:09:09.700  6688  7589 D ActivityTracker: #ACT# Handle New activity, p= com.esper.authapp a=com.esper.authapp.ui.ConfigActivity
+04-19 15:09:09.701  6688  7589 D ActivityTracker: handleNewActivity - DW Status: dw_enabled_permanently
+04-19 15:09:09.701  6688  7589 I ActivityTracker: #DW# handle new activity: [FINISH]
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment: Currently set values for:
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment: ANGLE GameManagerService for com.esper.authapp: false
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment: com.esper.authapp is not listed in per-application setting
+04-19 15:09:09.702 30294 30294 V GraphicsEnvironment: Updatable production driver is not supported on the device.
+04-19 15:09:09.709 30294 30313 W ziparchive: Unable to open '/system/framework/QXPerformance.dm': No such file or directory
+04-19 15:09:09.709 30294 30313 W ziparchive: Unable to open '/system/framework/QXPerformance.dm': No such file or directory
+04-19 15:09:09.712  1559  4615 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10276. pid: 30294
+04-19 15:09:09.718 30294 30294 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+04-19 15:09:09.728 30294 30294 D ViewConfiguration: mScrollFriction : 0.015
+04-19 15:09:09.735 30294 30294 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10276; state: ENABLED
+04-19 15:09:09.754  1559  4615 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10276; state: DISABLED
+04-19 15:09:09.754 30294 30294 V EsperDeviceSDK: SDK service present: true
+04-19 15:09:09.767 30294 30318 V EsperDeviceSDK: SDK service present: true
+04-19 15:09:09.771 30294 30294 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10276; state: DISABLED
+04-19 15:09:09.772 30294 30294 W OpenGLRenderer: Unknown dataspace 0
+04-19 15:09:09.779 30294 30294 D VRI[ConfigActivity]: zwctaskbarheight = -1
+04-19 15:09:09.779 30294 30294 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: -1
+04-19 15:09:09.782  1559  6617 D CoreBackPreview: Window{402d5b5 u0 com.esper.authapp/com.esper.authapp.ui.ConfigActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@c476b16, mPriority=0, mIsAnimationCallback=false}
+04-19 15:09:09.792  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.792  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.792  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.792  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.793  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.793  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.793  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.793  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.793  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.793  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.795  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.796  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.796  1228 15517 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+04-19 15:09:09.799  1559  6617 D WindowManager: displayId: 0
+04-19 15:09:09.799  1559  6617 D WindowManager: isFullscreen: false isImmersive: false
+04-19 15:09:09.799  1559  6617 D WindowManager: mLastFocusIsFullscreen: false mLastImmersiveMode: false
+04-19 15:09:09.799  1559  6617 D WindowManager: mFocusedWindow: Window{402d5b5 u0 com.esper.authapp/com.esper.authapp.ui.ConfigActivity}
+04-19 15:09:09.799  1559  6617 D WindowManager: mLastFocusedWindow: null
+04-19 15:09:09.799  1559  6617 D WindowManager: mLastFocusIsImmersiveAndFullscreen: false
+04-19 15:09:09.799  1559  6617 D WindowManager: mLastWindowClosed: null
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: QUALCOMM build                   : 8378e7da74, I14aca34000
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Build Date                       : 03/08/25
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: OpenGL ES Shader Compiler Version: EV031.35.01.12
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Local Branch                     : 
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.9.14.11.00.00.571.148
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Remote Branch                    : NONE
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Reconstruct Branch               : NOTHING
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Build Config                     : S P 10.0.7 AArch64
+04-19 15:09:09.808 30294 30315 I AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+04-19 15:09:09.815 30294 30315 I AdrenoGLES-0: PFP: 0x016dc120, ME: 0x00000000
+04-19 15:09:09.844 30294 30315 E OpenGLRenderer: Unable to match the desired swap behavior.
+04-19 15:09:09.888 30294 30294 I EsperDeviceSDK: onServiceConnected: connected to SDK service
+04-19 15:09:09.890  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.890  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.890  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.890  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.890  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.890  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.890  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.890  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.891  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.891  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.893  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.893  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.893  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.893  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.893  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.893  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.893  1559  2020 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.893  1559  2020 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.893  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.893  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.901  1559  2340 D ZebraDisplayServiceFw: isZwcInstalledAndDesktopModeEnabled false
+04-19 15:09:09.906 30294 30294 I ZebraBridge:EsperDeviceManager: Provision info -> apiEndpoint=https://drjam-api.esper.cloud, tenantUUID=01337f31-1a7a-40d4-b264-b71b04bd087d, deviceUUID=9bd48ba5-42c5-47b6-96b0-f504fbedf2dc, complete=true
+04-19 15:09:09.909  1559  2285 D CompatibilityChangeReporter: Compat change id reported: 214016041; UID 10276; state: ENABLED
+04-19 15:09:09.909  1559  2285 I ImeTracker: com.esper.authapp:3373feaa: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+04-19 15:09:09.910  1559  2285 I ImeTracker: com.esper.authapp:3373feaa: onCancelled at PHASE_SERVER_SHOULD_HIDE
+04-19 15:09:09.911  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.911  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.915 20421 22078 D CustomSerialNumberUtils: getSerialNumber: Manufacturer: Zebra Technologies, Model: TC27
+04-19 15:09:09.918 23916 23916 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2259 
+04-19 15:09:09.919  1559  1999 I ActivityTaskManager: Displayed com.esper.authapp/.ui.ConfigActivity for user 0: +321ms
+04-19 15:09:09.921  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.921  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.922 23916 23916 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+04-19 15:09:09.922 23916 23916 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1446 onStartInput(EditorInfo{EditorInfo{packageName=com.esper.authapp, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+04-19 15:09:09.922 23916 23916 I AndroidIME: LatinIMEBase.updateInputViewCoverNavigation():322 Update input view padding, isNavbarOverInputWindow=false, bottom inset=144
+04-19 15:09:09.922 20421 21032 D CustomSerialNumberUtils: getSerialNumber: Manufacturer: Zebra Technologies, Model: TC27
+04-19 15:09:09.923  1559  4048 W PackageConfigPersister: App-specific configuration not found for packageName: com.esper.authapp and userId: 0
+04-19 15:09:09.924 23916 23916 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+04-19 15:09:09.926 20421 21032 D CustomSerialNumberUtils: getSerialNumber: Manufacturer: Zebra Technologies, Model: TC27
+04-19 15:09:09.929 30294 30294 I ZebraBridge:EsperDeviceManager: EsperDeviceInfo -> apiLevel=28, deviceId=MA-YUR-A0BAB, serialNo=25183524702422, imei1=356466670732968, imei2=350859341249840, wifiMacAddress=88:bc:ac:50:64:37, uuid=9bd48ba5-42c5-47b6-96b0-f504fbedf2dc
+--------- beginning of crash
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: FATAL EXCEPTION: main
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: Process: com.esper.authapp, PID: 30294
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: kotlin.UninitializedPropertyAccessException: lateinit property binding has not been initialized
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at com.esper.authapp.ui.ConfigActivity$prewarmSdkRuntime$1.invokeSuspend(ConfigActivity.kt:161)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:187)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at com.esper.authapp.esper.EsperDeviceManager$awaitCallback$2$1.onResponse(EsperDeviceManager.kt:205)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at io.esper.devicesdk.EsperDeviceSDK.lambda$getEsperDeviceInfo$12(EsperDeviceSDK.java:285)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at io.esper.devicesdk.EsperDeviceSDK$$ExternalSyntheticLambda40.run(D8$$SyntheticClass:0)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8223)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:977)
+04-19 15:09:09.931 30294 30294 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@3c7ac1a, Dispatchers.Main.immediate]
+04-19 15:09:09.932  1559  2285 W ActivityTaskManager:   Force finishing activity com.esper.authapp/.ui.ConfigActivity
+04-19 15:09:09.933  4047  4089 V WindowManagerShell: Transition requested: android.os.BinderProxy@bddbcb8 TransitionRequestInfo { type = CLOSE, triggerTask = null, remoteTransition = null, displayChange = null }
+04-19 15:09:09.933  1559  2285 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.933  1559  2285 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.935  1559  2285 D WindowManager: displayId: 0
+04-19 15:09:09.935  1559  2285 D WindowManager: isFullscreen: false isImmersive: false
+04-19 15:09:09.935  1559  2285 D WindowManager: mLastFocusIsFullscreen: false mLastImmersiveMode: false
+04-19 15:09:09.935  1559  2285 D WindowManager: mFocusedWindow: null
+04-19 15:09:09.935  1559  2285 D WindowManager: mLastFocusedWindow: Window{402d5b5 u0 com.esper.authapp/com.esper.authapp.ui.ConfigActivity}
+04-19 15:09:09.935  1559  2285 D WindowManager: mLastFocusIsImmersiveAndFullscreen: false
+04-19 15:09:09.935  1559  2285 D WindowManager: mLastWindowClosed: null
+04-19 15:09:09.935  1559  2285 D ActivityTrigger: ActivityTrigger activityPauseTrigger 
+04-19 15:09:09.937  1559  2285 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.937  1559  2285 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.937  1559  2285 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.937  1559  2285 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.938  1559  2285 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.938  1559  2285 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.939  1559  2285 D WindowManager: displayId: 0
+04-19 15:09:09.939  1559  2285 D WindowManager: isFullscreen: false isImmersive: false
+04-19 15:09:09.939  1559  2285 D WindowManager: mLastFocusIsFullscreen: false mLastImmersiveMode: false
+04-19 15:09:09.939  1559  2285 D WindowManager: mFocusedWindow: null
+04-19 15:09:09.939  1559  2285 D WindowManager: mLastFocusedWindow: Window{402d5b5 u0 com.esper.authapp/com.esper.authapp.ui.ConfigActivity}
+04-19 15:09:09.939  1559  2285 D WindowManager: mLastFocusIsImmersiveAndFullscreen: false
+04-19 15:09:09.939  1559  2285 D WindowManager: mLastWindowClosed: null
+04-19 15:09:09.942  4451 10352 D f       : componentInfo - com.shoonyaos.shoonyadpc.activities.Dashboard
+04-19 15:09:09.942  4451 10352 D f       : getForegroundActivity changed
+04-19 15:09:09.942  6688  6724 D ActivityChangeNotifier: onActivityChange
+04-19 15:09:09.943 30294 30294 I Process : Sending signal. PID: 30294 SIG: 9
+04-19 15:09:09.943  6688 30325 D ActivityChangeNotifier: getCurrentActivity
+04-19 15:09:09.946  6688 30325 D TAG     : Process Activity Change
+04-19 15:09:09.946  6688  7589 I ActivityTracker: #DW# Activity Tracker sync shutdown : [START]
+04-19 15:09:09.946  6688  7589 I ActivityTracker: #DW# Activity Tracker sync shutdown : [FINISH]
+04-19 15:09:09.946  6688  7589 I ActivityTracker: #DW# handle new activity: [START]
+04-19 15:09:09.946  6688  7589 D ActivityTracker: #ACT# Handle New activity, p= io.shoonya.shoonyadpc a=com.shoonyaos.shoonyadpc.activities.Dashboard
+04-19 15:09:09.947  6688  7589 D ActivityTracker: handleNewActivity - DW Status: dw_enabled_permanently
+04-19 15:09:09.947  6688  7589 I ActivityTracker: #DW# handle new activity: [FINISH]
+04-19 15:09:09.964  1559  2340 D ZebraDisplayServiceFw: isZwcInstalledAndDesktopModeEnabled false
+04-19 15:09:09.967  1347  1605 E BpTransactionCompletedListener: Failed to transact (-32)
+04-19 15:09:09.970  1559  6623 I ActivityManager: Process com.esper.authapp (pid 30294) has died: fg  TOP 
+04-19 15:09:09.970  1559  4615 I WindowManager: WIN DEATH: Window{402d5b5 u0 com.esper.authapp/com.esper.authapp.ui.ConfigActivity}
+04-19 15:09:09.970  1559  6878 I ImeTracker: com.esper.authapp:31fdcc7c: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
+04-19 15:09:09.970  1559  6878 I ImeTracker: com.esper.authapp:31fdcc7c: onCancelled at PHASE_SERVER_SHOULD_HIDE
+04-19 15:09:09.970  1559  4615 W InputManager-JNI: Input channel object '402d5b5 com.esper.authapp/com.esper.authapp.ui.ConfigActivity (client)' was disposed without first being removed with the input manager!
+04-19 15:09:09.970  1102  1102 I Zygote  : Process 30294 exited due to signal 9 (Killed)
+04-19 15:09:09.971  1559  4615 I WindowManager: removeWindowLw called: com.esper.authapp
+04-19 15:09:09.971  1559  4615 D WindowManager: removewindowlw package --com.esper.authapp mState--PAUSING
+04-19 15:09:09.971  1559  4615 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.971  1559  2086 I libprocessgroup: Successfully killed process cgroup uid 10276 pid 30294 in 0ms
+04-19 15:09:09.971  1559  4615 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.971  1559  4615 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:09.972  1559  4615 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:09.972  1559  4615 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.972  1559  4615 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.975 20421 20557 D PersistentLogger: flush: called
+04-19 15:09:09.977  1559  2007 D DisplayManagerService: Drop pending events for gone uid 10276
+04-19 15:09:09.979  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.982  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.984  1559  6623 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:09.984  1559  6623 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:09.986 20421 20421 D Dashboard: onResume
+04-19 15:09:09.986  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.987 20421 20421 D Dashboard: onResume: payloadBundle: null
+04-19 15:09:09.988  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.988  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.989  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:09.994  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.995  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : Uninstall - f0 - s5.k@bfcf9c - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : ASK_STORAGE_PERMISSION - f0 - s5.l@1951da5 - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : ApplyingBlueprint - f0 - s5.m@e24157a - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : RevertingBlueprint - f0 - s5.n@a44812b - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : AwaitingGPlayAppsInstallation - f0 - s5.o@c84988 - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : BlueprintApplicationFailed - f0 - s5.p@2deef21 - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : BlueprintApplicationSuccessful - f0 - s5.q@a4e0f46 - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : BlueprintRevertSuccessful - f0 - s5.r@2080507 - false
+04-19 15:09:09.998 20421 20421 D EventBus: subscribe : BlueprintRevertFailed - f0 - s5.s@95c7634 - false
+04-19 15:09:09.999 20421 20421 D EventBus: subscribe : APP_LIST_SIZE_UPDATE - f0 - s5.t@89a5c5d - false
+04-19 15:09:09.999 20421 20421 D DpcUtils: setLockTaskFeatures
+04-19 15:09:10.004  1559  1999 V WindowManager: Sent Transition #125 createdAt=04-19 15:09:09.932 via request=TransitionRequestInfo { type = CLOSE, triggerTask = null, remoteTransition = null, displayChange = null }
+04-19 15:09:10.004  1559  1999 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+04-19 15:09:10.004  1559  1999 V WindowManager:     info={id=125 t=CLOSE f=0x200010 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{bfc4c53 Task{f91660 #1 type=home}}} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb57924 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{RemoteToken{e77ddeb Task{539c3e2 #41 type=standard A=10276:com.esper.authapp}}} m=CLOSE f=NONE leash=Surface(name=Task=41)/@0x71a7c65 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:10.005  4047  4089 V WindowManagerShell: onTransitionReady android.os.BinderProxy@bddbcb8: {id=125 t=CLOSE f=0x200010 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d0dec64} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb399a91 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@64c4ecd} m=CLOSE f=NONE leash=Surface(name=Task=41)/@0x1c52df6 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:10.006  4047  4089 V WindowManagerShell: Start finish-for-sync track 0
+04-19 15:09:10.006  4047  4089 V WindowManagerShell:  Attempt to merge sync (#125)android.os.BinderProxy@bddbcb8@0 into (#123)android.os.BinderProxy@b937dca@0 via a SLEEP proxy
+04-19 15:09:10.007  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.008  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{b5c0132 #u0a172/-237 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m4s549ms:-43m4s549ms READY}
+04-19 15:09:10.009 20421 20421 D BlueprintRepository: getBoolean: name = status_bar_disabled
+04-19 15:09:10.009 20421 20421 D BlueprintRepository: getBoolean: field = BlueprintField(name_of_field=status_bar_disabled, value=false, type=2, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=null, id=530, field_error_message=null)
+04-19 15:09:10.009 20421 20421 D BlueprintUtility: getBoolean: field = BlueprintField(name_of_field=status_bar_disabled, value=false, type=2, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=null, id=530, field_error_message=null)
+04-19 15:09:10.009  4047  4089 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#123)android.os.BinderProxy@b937dca@0
+04-19 15:09:10.011  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService } U=0: not found
+04-19 15:09:10.012  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{a9e3b6e #u0a172/2000010999 com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService u=0 s=10172 NET PERSISTED READY}
+04-19 15:09:10.012  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.012  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.013  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.013  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.014  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService } U=0: not found
+04-19 15:09:10.014  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{2f6a07a #u0a172/2000007999 com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService u=0 s=10172 TIME=-44m0s410ms:+23h15m59s590ms NET PERIODIC PERSISTED READY}
+04-19 15:09:10.014  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.015  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.015  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.015  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.016  1559  1999 V WindowManager: Finish Transition #123: created at 04-19 15:09:09.574 collect-started=0.09ms request-sent=13.354ms started=25.019ms ready=55.461ms sent=58.233ms finished=441.453ms
+04-19 15:09:10.016  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.016  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{bd1607d #u0a172/-121 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-38m32s882ms:-38m32s882ms READY}
+04-19 15:09:10.016  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.016  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.016  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.017  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.017  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.017  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.018 20421 20421 D PolicyUtils: getKioskAppPackageName: no data
+04-19 15:09:10.018  1559  1999 V WindowManager: Finish Transition #124: created at 04-19 15:09:09.668 collect-started=0.137ms request-sent=1.515ms started=3.903ms ready=3.878ms sent=15.64ms finished=350.282ms
+04-19 15:09:10.019  1559  4618 I DevicePolicyEngine: Couldn't find any receivers that handle ACTION_DEVICE_POLICY_SET_RESULT in package io.shoonya.shoonyadpc
+04-19 15:09:10.019  1559  4618 D DevicePolicyEngine: Writing device policies to file.
+04-19 15:09:10.019  1559  4618 D DevicePolicyEngine: Writing to /data/system/device_policy_state.xml
+04-19 15:09:10.020  4047  4089 V WindowManagerShell: Track 0 became idle
+04-19 15:09:10.020  4047  4089 V WindowManagerShell: Playing animation for (#125)android.os.BinderProxy@bddbcb8@0
+04-19 15:09:10.020  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@bf820bb
+04-19 15:09:10.020  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@e4119d8
+04-19 15:09:10.020  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.020  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@ca80131
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@cba016
+04-19 15:09:10.021  4047  4089 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@87e0d97
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@f99fb84
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@b4a7f6d
+04-19 15:09:10.021  4047  4089 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=125 t=CLOSE f=0x200010 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d0dec64} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb399a91 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@64c4ecd} m=CLOSE f=NONE leash=Surface(name=Task=41)/@0x1c52df6 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  Delegate animation for #125 to null
+04-19 15:09:10.021  4047  4089 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@cd9a7a2
+04-19 15:09:10.021  4047  4089 V WindowManagerShell: start default transition animation, info = {id=125 t=CLOSE f=0x200010 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@d0dec64} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb399a91 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@64c4ecd} m=CLOSE f=NONE leash=Surface(name=Task=41)/@0x1c52df6 sb=Rect(0, 0 - 1080, 2160) eb=Rect(0, 0 - 1080, 2160) d=0}]}
+04-19 15:09:10.022  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.022  4047  4089 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@849ba93 animAttr=0xb type=CLOSE isEntrance=false
+04-19 15:09:10.022  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.022  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.023  4047  4089 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@b5c0ac9 animAttr=0xa type=CLOSE isEntrance=true
+04-19 15:09:10.024  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.024  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.024  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{91ec9d1 #u0a172/-45 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m22s544ms:-44m22s544ms READY}
+04-19 15:09:10.025  4047  4089 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@cd9a7a2
+04-19 15:09:10.026  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.026  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{8635ce5 #u0a172/-47 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s859ms:-44m31s859ms NET READY}
+04-19 15:09:10.026 20421 20421 D BaseActivity: startLockTaskSafely
+04-19 15:09:10.027  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.028 20421 20421 D BaseActivity: startLockTaskSafely: preconditions failed
+04-19 15:09:10.028  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{3224a47 #u0a172/-151 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s854ms:-43m31s854ms READY}
+04-19 15:09:10.029  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.029  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{12bac09 #u0a172/-163 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m31s806ms:-44m31s806ms READY}
+04-19 15:09:10.030 20421 20421 D DpcUtils: isLauncherLess: checking blueprint
+04-19 15:09:10.030  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.030 20421 20421 D BlueprintRepository: getBoolean: name = launcher_less_dpc
+04-19 15:09:10.030  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.030  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{d673b26 #u0a172/-49 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m0s102ms:-43m5s102ms IDLE READY}
+04-19 15:09:10.030 20421 20421 D BlueprintRepository: getBoolean: field = BlueprintField(name_of_field=launcher_less_dpc, value=false, type=2, section=application, processor=ApplicationProcessor, locked=true, clazz=null, id=540, field_error_message=null)
+04-19 15:09:10.031 20421 20421 D BlueprintUtility: getBoolean: field = BlueprintField(name_of_field=launcher_less_dpc, value=false, type=2, section=application, processor=ApplicationProcessor, locked=true, clazz=null, id=540, field_error_message=null)
+04-19 15:09:10.031  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{59c6d7a #u0a172/-353 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m4s655ms:+5h15m55s345ms NET READY}
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.032  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.033  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.034  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.034  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.034  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.034  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.034  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.035  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.038 20421 20421 D PolicyUtils: getKioskAppPackageName: no data
+04-19 15:09:10.038 20421 20421 D Dashboard: starting locktaskmode since device is not locked
+04-19 15:09:10.038 20421 20421 D DpcUtils: setLockTaskFeatures
+04-19 15:09:10.042 20421 20421 D BlueprintRepository: getBoolean: name = status_bar_disabled
+04-19 15:09:10.043 20421 20421 D BlueprintRepository: getBoolean: field = BlueprintField(name_of_field=status_bar_disabled, value=false, type=2, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=null, id=530, field_error_message=null)
+04-19 15:09:10.043 20421 20421 D BlueprintUtility: getBoolean: field = BlueprintField(name_of_field=status_bar_disabled, value=false, type=2, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=null, id=530, field_error_message=null)
+04-19 15:09:10.046  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.046  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.046  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.046  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.046  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.046  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.047  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.047  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.050 20421 20421 D PolicyUtils: getKioskAppPackageName: no data
+04-19 15:09:10.051  1559  2288 I DevicePolicyEngine: Couldn't find any receivers that handle ACTION_DEVICE_POLICY_SET_RESULT in package io.shoonya.shoonyadpc
+04-19 15:09:10.051  1559  2288 D DevicePolicyEngine: Writing device policies to file.
+04-19 15:09:10.051  1559  2288 D DevicePolicyEngine: Writing to /data/system/device_policy_state.xml
+04-19 15:09:10.058 20421 20421 D BaseActivity: startLockTaskSafely
+04-19 15:09:10.058 20421 20421 D BaseActivity: startLockTaskSafely: preconditions failed
+04-19 15:09:10.063 20421 20421 D PolicyUtils: getKioskAppPackageName: no data
+04-19 15:09:10.068 20421 20421 D Dashboard: getKioskIntent: kioskAppPackage = null, isGeoFenceLockActive = false, isDeviceLockedDown = false
+04-19 15:09:10.070 20421 20421 D DockService: stopService: fired intent
+04-19 15:09:10.070 20421 20421 D Dashboard: launchKioskApp: stopped dock service, failed pre-conditions
+04-19 15:09:10.070 20421 20421 D BlueprintRepository: getObject: name = app_layout_setting
+04-19 15:09:10.070 20421 20421 D BlueprintRepository: getObject: field = BlueprintField(name_of_field=app_layout_setting, value={"app_icon_size":-1,"app_name_size":-1,"brand_logo_position":"BOTTOM_RIGHT","device_alias_size":-1,"device_name_position":"BOTTOM_LEFT","device_name_size":-1,"show_device_alias_name":true,"show_device_name":true}, type=7, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting, id=532, field_error_message=null)
+04-19 15:09:10.070 20421 20421 D BlueprintUtility: getClassFromName: clazz = com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting
+04-19 15:09:10.070 20421 20421 D BlueprintUtility: getObject: field = BlueprintField(name_of_field=app_layout_setting, value={"app_icon_size":-1,"app_name_size":-1,"brand_logo_position":"BOTTOM_RIGHT","device_alias_size":-1,"device_name_position":"BOTTOM_LEFT","device_name_size":-1,"show_device_alias_name":true,"show_device_name":true}, type=7, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting, id=532, field_error_message=null) | cls = AppLayoutSetting
+04-19 15:09:10.071 20421 20421 D AppUtils: isAppIconSystemDefault: App icon size is not set or invalid, returning default
+04-19 15:09:10.071 20421 20421 D Dashboard: updateGridLayoutIfSettingsChanged: Using system default icon size
+04-19 15:09:10.071 20421 20421 D Dashboard: updateGridLayoutIfSettingsChanged - Measured width: 1020, Icon size: 225.0, Span count: 3
+04-19 15:09:10.071 20421 20421 D Dashboard: adjustDeviceNameSize: invoked
+04-19 15:09:10.071 20421 24951 D Dashboard: adjustDeviceNameSize: launching coroutine to compute layout params
+04-19 15:09:10.071 20421 24951 D Dashboard: adjustDeviceNameSize: computing layout params
+04-19 15:09:10.071 20421 24951 D Dashboard: computeLayoutParams: applying layout params
+04-19 15:09:10.073  4047  4063 W System  : A resource failed to call release. 
+04-19 15:09:10.073  4047  4063 W System  : A resource failed to call release. 
+04-19 15:09:10.074  4047  4063 W System  : A resource failed to call release. 
+04-19 15:09:10.074  4047  4063 W System  : A resource failed to call release. 
+04-19 15:09:10.074  4047  4063 W System  : A resource failed to call release. 
+04-19 15:09:10.075 20421 24951 D Dashboard: getVisibilityFlags: checking visibility flags
+04-19 15:09:10.075 20421 24951 D BlueprintRepository: getObject: name = app_layout_setting
+04-19 15:09:10.075 20421 24951 D BlueprintRepository: getObject: field = BlueprintField(name_of_field=app_layout_setting, value={"app_icon_size":-1,"app_name_size":-1,"brand_logo_position":"BOTTOM_RIGHT","device_alias_size":-1,"device_name_position":"BOTTOM_LEFT","device_name_size":-1,"show_device_alias_name":true,"show_device_name":true}, type=7, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting, id=532, field_error_message=null)
+04-19 15:09:10.075 20421 24951 D BlueprintUtility: getClassFromName: clazz = com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting
+04-19 15:09:10.075 20421 24951 D BlueprintUtility: getObject: field = BlueprintField(name_of_field=app_layout_setting, value={"app_icon_size":-1,"app_name_size":-1,"brand_logo_position":"BOTTOM_RIGHT","device_alias_size":-1,"device_name_position":"BOTTOM_LEFT","device_name_size":-1,"show_device_alias_name":true,"show_device_name":true}, type=7, section=display_branding, processor=ApplicationProcessor, locked=true, clazz=com.shoonyaos.shoonyadpc.models.device_template.blueprint.AppLayoutSetting, id=532, field_error_message=null) | cls = AppLayoutSetting
+04-19 15:09:10.075 20421 24951 D Dashboard: getVisibilityFlags: brand logo visibility from AppLayoutSetting is null, using fallback.
+04-19 15:09:10.077 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: null
+04-19 15:09:10.077 20421 24465 D TemplateUtils: getAppstoInstallDuringProvisioning called
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: template apps count = 3
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: com.esper.authapp
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: not a google play app
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: com.esper.supervisorwalk
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: not a google play app
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: com.esper.supervisorpulse
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: not a google play app
+04-19 15:09:10.079 20421 24465 D TemplateUtils: getPendingGoogleAppInstallsWithWorkaround: pending = 0
+04-19 15:09:10.079 20421 24465 D ServiceUtils: startServiceOrSubscribe: service started thus notifying immediately
+04-19 15:09:10.079 20421 24465 D EsperFgServiceNotifier: unSubscribe: s5.f0$p@c928dff
+04-19 15:09:10.080 20421 29305 D EsperSharedDataContentProviderHelper: putValue: insertedUri:  content://io.esper.commons.datacache.provider/EsperSharedData/localPolicyPrefs/policyAppsInstalled/1
+04-19 15:09:10.081 20421 24465 D Dashboard: startDockService: condition to start dock service satisfied false
+04-19 15:09:10.081 20421 24951 D Dashboard: getVisibilityFlags: Remote settings branding enabled. remoteBrandEnableDefault: true, final brandVisibility: true
+04-19 15:09:10.081 20421 24951 D Dashboard: getVisibilityFlags: final determined esperBrandVisible: true
+04-19 15:09:10.081 20421 24951 D Dashboard: getVisibilityFlags: final determined esperDeviceNameVisibility: true
+04-19 15:09:10.081 20421 24951 D Dashboard: getVisibilityFlags: final determined esperDeviceNameAliasVisibility: true
+04-19 15:09:10.081 20421 24951 D Dashboard: computeLayoutParams: visibilityFlags = VisibilityFlags(showDeviceName=true, showDeviceAlias=true, showBrandLogo=true)
+04-19 15:09:10.081 20421 24465 D BroadcastFinishableActivity: finishActivities: sent broadcast for com.shoonyaos.shoonyadpc.activities.MainActivity
+04-19 15:09:10.081 20421 24465 D BroadcastFinishableActivity: finishActivities: sent broadcast for com.shoonyaos.shoonyadpc.activities.ScanQRActivity
+04-19 15:09:10.081 20421 24465 D BroadcastFinishableActivity: finishActivities: sent broadcast for com.shoonyaos.shoonyadpc.activities.ProvisionScreen
+04-19 15:09:10.081 20421 24465 D AdbUtils: areDebuggingFeaturesDisabled: reading from dpm
+04-19 15:09:10.081 20421 24951 D Dashboard: computeLayoutParams: params computed successfully
+04-19 15:09:10.081 20421 20421 D Dashboard: adjustDeviceNameSize: applying layout params
+04-19 15:09:10.081 20421 20421 D Dashboard: setUpVisibility: setting up visibility flags
+04-19 15:09:10.081 20421 24465 D AdbUtils: areDebuggingFeaturesDisabled: false
+04-19 15:09:10.082 20421 24465 D AdbUtils: stopAdbDaemonIfWindowExceeded: auto-stop prevented, indefinite ADB access allowed
+04-19 15:09:10.082 20421 24465 D Dashboard: applySupervisorBindWorkaround
+04-19 15:09:10.082 20421 24465 D SupervisorPackageProvider: getPackageName: activePackage = null
+04-19 15:09:10.082 20421 24465 D Dashboard: applySupervisorBindWorkaround: supervisor package is null
+04-19 15:09:10.086 20421 24465 D Dashboard: Cannot fetch password policy
+04-19 15:09:10.086 20421 24465 D Dashboard: KeyGuard Secured : false
+04-19 15:09:10.086 20421 24465 D Dashboard: Minimum password length : 0
+04-19 15:09:10.088 20421 24465 D PolicyUtils: getKioskAppPackageName: no data
+04-19 15:09:10.088 20421 24465 D Dashboard: refreshDeviceLockDownStatus: compliance policy state = POLICY_COMPLIANT
+04-19 15:09:10.088 20421 24465 D Dashboard: refreshDeviceLockDownStatus: policy compliant
+04-19 15:09:10.088 20421 24465 D Dashboard: processOnResumeExtras: DPC is Storage Manager
+04-19 15:09:10.089 20421 24465 D EventBus: publish : STORAGE_PERMISSION_GRANTED - {} - null
+04-19 15:09:10.090 20421 24465 D Dashboard: DpcParam not set for hideNavBarInKioskMode, will continue with Remote config for Hide Navigation Bar
+04-19 15:09:10.090 20421 24465 D KnoxUtils: hideNavigationBar: Hide the device navigation bar: false
+04-19 15:09:10.090 20421 24465 E KnoxUtils: hideNavigationBar: Failed To Configure Updates With Knox | Knox Not available
+04-19 15:09:10.090 20421 24465 D ServiceUtils: startEsperForegroundServiceSafely: called
+04-19 15:09:10.090 20421 24465 D ServiceUtils: startEsperForegroundServiceSafely: context != null: true
+04-19 15:09:10.090 20421 24465 D ServiceUtils: startEsperForegroundServiceSafely: Build.VERSION.SDK_INT >= Build.VERSION_CODES.O: true
+04-19 15:09:10.090 20421 24465 D ServiceUtils: startEsperForegroundServiceSafely: !EsperFgService.isServiceStarted: false
+04-19 15:09:10.095 20421 20421 D VRI[Dashboard]: zwctaskbarheight relayoutWindow = -1 forcedesktop mode false
+04-19 15:09:10.095 20421 20421 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: -1
+04-19 15:09:10.095  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.095  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.095  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.095  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.096  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.096  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.096  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.096  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.104  1559  2322 D ActivityManager: freezing 5603 com.zebra.timecacher
+04-19 15:09:10.401  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.405  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.405  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.406  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.406  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.407  1559  2310 W JobScheduler.Concurrency: Had fewer than 16 in existence
+04-19 15:09:10.410  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.410  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.411  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.411  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.411  1559  6617 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.411  1559  6617 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.412  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.412  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.414  1559  6617 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.414  1559  6617 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.415  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.415  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.416  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{b5c0132 #u0a172/-237 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-44m4s957ms:-43m4s957ms READY}
+04-19 15:09:10.416  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.416  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.416  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.418  4047  4103 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@bec1c04
+04-19 15:09:10.418  1559  4618 D CoreBackPreview: Window{a0f9ea9 u0 Splash Screen com.esper.authapp EXITING}: Setting back callback null
+04-19 15:09:10.419  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.420  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService } U=0: not found
+04-19 15:09:10.421  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{a9e3b6e #u0a172/2000010999 com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService u=0 s=10172 NET PERSISTED READY}
+04-19 15:09:10.423  1559  2288 I WindowManager: removeWindowLw called: com.esper.authapp
+04-19 15:09:10.423  1559  2288 D WindowManager: removewindowlw package --com.esper.authapp mState--DESTROYED
+04-19 15:09:10.423  1559  2019 W ActivityManager: setHasOverlayUi called on unknown pid: 30294
+04-19 15:09:10.423  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.423  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.424  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.424  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.424  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.424  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.424  1559  2288 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.425  1559  2288 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.425  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService } U=0: not found
+04-19 15:09:10.426  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{2f6a07a #u0a172/2000007999 com.google.android.googlequicksearchbox/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService u=0 s=10172 TIME=-44m0s821ms:+23h15m59s179ms NET PERIODIC PERSISTED READY}
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.427  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.428  1559  2288 W InputManager-JNI: Input channel object 'a0f9ea9 Splash Screen com.esper.authapp (client)' was disposed without first being removed with the input manager!
+04-19 15:09:10.429  1559  2288 I WindowManager: removeWindowLw called: com.esper.authapp
+04-19 15:09:10.429  1559  2288 D WindowManager: removewindowlw package --com.esper.authapp mState--DESTROYED
+04-19 15:09:10.430  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.430  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.430  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.430  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.430  1559  2288 D WindowManager: layoutWindowLw currenttaskBarInDb-- 0
+04-19 15:09:10.430  1559  2288 I WindowLayout: isInForceDesktopMode---false displayId: 0 zwcTaskbarHeight: 0
+04-19 15:09:10.431  1559  2288 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.431  1559  2288 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.433  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.433  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.434  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.434  1559  2310 W ActivityManager: Unable to start service Intent { flg=0x4 cmp=com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService } U=0: not found
+04-19 15:09:10.435  1559  2019 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{d6464ad u0 com.esper.authapp/.ui.ConfigActivity t41 f} isExiting}
+04-19 15:09:10.435  1559  2310 E JobScheduler.Concurrency: Error executing JobStatus{bd1607d #u0a172/-121 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService u=0 s=10172 TIME=-38m33s301ms:-38m33s301ms READY}
+04-19 15:09:10.436  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.436  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.436  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:10.436  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.436  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.447  1559  2340 D ZebraDisplayServiceFw: isZwcInstalledAndDesktopModeEnabled false
+04-19 15:09:10.450  1559  6617 I ImeTracker: io.shoonya.shoonyadpc:20c276f8: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+04-19 15:09:10.450  1559  6617 I ImeTracker: io.shoonya.shoonyadpc:20c276f8: onCancelled at PHASE_SERVER_SHOULD_HIDE
+04-19 15:09:10.452 23916 23916 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2259 
+04-19 15:09:10.452 23916 23916 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+04-19 15:09:10.453 23916 23916 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1446 onStartInput(EditorInfo{EditorInfo{packageName=io.shoonya.shoonyadpc, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+04-19 15:09:10.453 23916 23916 I AndroidIME: LatinIMEBase.updateInputViewCoverNavigation():322 Update input view padding, isNavbarOverInputWindow=false, bottom inset=144
+04-19 15:09:10.454  1559  4618 W PackageConfigPersister: App-specific configuration not found for packageName: io.shoonya.shoonyadpc and userId: 0
+04-19 15:09:10.454  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.454  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.455 23916 23916 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+04-19 15:09:10.461  1347  1347 E BpTransactionCompletedListener: Failed to transact (-32)
+04-19 15:09:10.531  4047  4089 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#125)android.os.BinderProxy@bddbcb8@0
+04-19 15:09:10.535  1559  1999 V WindowManager: Finish Transition #125: created at 04-19 15:09:09.932 collect-started=0.065ms request-sent=0.089ms started=10.248ms ready=51.099ms sent=70.961ms finished=602.358ms
+04-19 15:09:10.545  4047  4089 V WindowManagerShell: Track 0 became idle
+04-19 15:09:10.546  4047  4089 V WindowManagerShell: All active transition animations finished
+04-19 15:09:10.547  1559  2020 D WindowManager: DP::updateSystemBarAttributes called
+04-19 15:09:10.547  1559  2020 D WindowManager: DP::::updateSystemBarAttributes displayId: 0
+04-19 15:09:10.711  1559  1569 I system_server: NativeAlloc concurrent copying GC freed 250788(10035KB) AllocSpace objects, 19(648KB) LOS objects, 25% free, 36MB/49MB, paused 156us,111us total 110.365ms
+04-19 15:09:10.737  1559  1571 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ax532E0UqCn6AakjQAw5Ww==/com.esper.authapp-bg_PJ9btXYb8lhlVFqv5Tg==/base.apk' with 1 weak references
+04-19 15:09:10.748  1559  1571 W System  : A resource failed to call release. 
+04-19 15:09:10.748  1559  1571 W System  : A resource failed to call HardwareBuffer.close. 
+04-19 15:09:10.748  1559  1571 W System  : A resource failed to call HardwareBuffer.close. 
+04-19 15:09:10.856  1796  1883 I android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL - isIgkExcluded api value : 0
+04-19 15:09:10.857  1796  1883 I android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL - isIgkFFExcluded api value : 0
+04-19 15:09:10.857  1796  1883 E android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL -IG Enable property is not set
+04-19 15:09:10.915  1559  1559 D FusionRssiPolling: updateLinkLayerStatsRssiSpeedFrequencyCapabilities rssi=-55 TxLinkspeed=229 freq=2412 RxLinkSpeed=206
+04-19 15:09:11.771  4313  5816 D QCNEJ/WlanStaInfoRelay: Received action: android.net.wifi.RSSI_CHANGED
+04-19 15:09:11.786 11506 11864 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=54 ]
+04-19 15:09:11.787 11506 11863 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[264353ea-139e]>Handler" thread_id=53 ]
+04-19 15:09:11.789 11506 11864 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=54 ]
+04-19 15:09:11.789 11506 12040 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[180e72ef-3472]>Handler" thread_id=64 ]
+04-19 15:09:11.790  4496  9352 E PhoneInterfaceManager: getCarrierPrivilegeStatusForUid: Invalid subId
+04-19 15:09:11.790  4496  8172 E PhoneInterfaceManager: getCarrierPrivilegeStatusForUid: Invalid subId
+04-19 15:09:11.791 11506 11863 I BugleRcsEngine: RCS Configuration storage in Bugle is disabled by p/h flag, using ProvisioningEngineStateCache.getProvisioningConfigurationForGivenSimIfExist() [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=53 ]
+04-19 15:09:11.792 11506 12040 I BugleRcsEngine: RCS Configuration storage in Bugle is disabled by p/h flag, using ProvisioningEngineStateCache.getProvisioningConfigurationForGivenSimIfExist() [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
+04-19 15:09:11.801 19654 19823 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+04-19 15:09:11.801 19654 19823 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+04-19 15:09:11.807 19654 19823 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+04-19 15:09:11.807 19654 19823 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+04-19 15:09:12.428  1233  6695 E LocSvc_ApiV02: reportLocEvent:3933] Loc event report: 0 KlobucharIonoMode_valid:0: leapSec_valid:1: tauC_valid:1 featureStatusReport_valid: 0 featureStatusReport: 0
+04-19 15:09:12.428  1233  6695 E LocSvc_ApiV02: reportSystemInfo:4452] system info type: 1, leap second valid: 1 current gps time:valid:1, week: 2415, msec: 79770429,current leap second:valid 1, seconds 18, next gps time: valid 0, week: 0, msec: 0,next leap second: valid 0, seconds 0
+04-19 15:09:12.434  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+04-19 15:09:12.434  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+04-19 15:09:12.435  1228 15528 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+04-19 15:09:12.435  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+04-19 15:09:12.437 15424 15532 I bt_stack: [INFO:btm_ble_gap.cc(3326)] btm_ble_process_adv_pkt_cont Data Complete 52:b7:d9:5a:0e:d3
+04-19 15:09:12.437 15424 15532 I bt_stack: [INFO:btm_ble_gap.cc(3326)] btm_ble_process_adv_pkt_cont Data Complete 52:b7:d9:5a:0e:d3
+04-19 15:09:12.437 15424 15532 D bt_btm_ble: bool parse_adv_audio_uuids_from_adv_pkt(const uint8_t *, size_t, uint8_t): tmap_cap_pts: false
+04-19 15:09:12.437 15424 15532 D bt_btm_ble: bool parse_adv_audio_uuids_from_adv_pkt(const uint8_t *, size_t, uint8_t): tmap_cap_pts: false
+04-19 15:09:12.438 15424 15512 D BluetoothRemoteDevices:  getMappingAddr null
+04-19 15:09:12.439 15424 15512 D BluetoothAdapterService: getIdentityAddress null retruning 52:B7:D9:5A:0E:D3
+04-19 15:09:12.439 15424 15512 W BluetoothAdapterService: getBleScanRssiRangeFilterForPackage
+04-19 15:09:12.444 19654 19841 I NearbyDiscovery: (REDACTED) BloomFilterAdvManager: Detected bloom filter but too far away, ignoring. %sm, %s
+04-19 15:09:12.476  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+04-19 15:09:12.476  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF
+04-19 15:09:12.627  1228 15517 D vendor.qti.bluetooth@1.0-wake_lock: Release wakelock is released 
+04-19 15:09:12.857  1796  1883 I android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL - isIgkExcluded api value : 0
+04-19 15:09:12.857  1796  1883 I android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL - isIgkFFExcluded api value : 0
+04-19 15:09:12.857  1796  1883 E android.hardware.biometrics.fingerprint@2.1-service: Fingerprint HIDL -IG Enable property is not set
+04-19 15:09:13.744 19654 19784 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+04-19 15:09:13.753  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:13.755  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:13.762  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:13.762  1100  1124 W statsd  : StateTracker not found for state atom 27
+04-19 15:09:13.769  1559  3853 I FUSIONNATIVE: getFusionWifiHAL: Fusion AIDL service available!
+04-19 15:09:13.770  1694  1694 I fusionconfd: getVoiceCallState: returns 0
+04-19 15:09:13.770  1291  1291 I vendor.zebra.fusion_aidl-service:  getParam: VOICE_CALL_IN_PROGRESS:  0
+04-19 15:09:13.771  1291  1291 I vendor.zebra.fusion_aidl-service:  getParam: allow_zebra_app_scans 0
+04-19 15:09:13.772  1694  3958 D fusionconfd: SkinnyCat: inside listen events
+04-19 15:09:13.772  1679  1899 D SMARTMU : #(1899) [ os_wlan_driver_event.cpp : 40] ------------------>  NL80211_CMD_TRIGGER_SCAN : 33 
+04-19 15:09:13.922  1559  1559 D FusionRssiPolling: updateLinkLayerStatsRssiSpeedFrequencyCapabilities rssi=-55 TxLinkspeed=229 freq=2412 RxLinkSpeed=206
+04-19 15:09:14.029 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+04-19 15:09:14.029 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too fast
+04-19 15:09:14.029 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too fast
+04-19 15:09:14.031 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too fast
+04-19 15:09:14.032 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+04-19 15:09:14.035 19654 19750 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+04-19 15:09:14.422  1796  1882 I FingerprintHal: FingerprintHAL - res and ready value :: 110 -- 0
+04-19 15:09:14.422  1796  1882 E FingerprintHal: FingerprintHAL : Timeout waiting for ready flag.
+04-19 15:09:14.612  1679  1899 D SMARTMU : #(1899) [ os_wlan_driver.cpp : 53] msg_handler: RTM_NEWADDR : wlan0
+04-19 15:09:14.612  1679  1899 D SMARTMU : #(1899) [ os_wlan_driver.cpp : 53] msg_handler: RTM_NEWADDR : wlan0
+04-19 15:09:14.618  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+04-19 15:09:14.618  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK ON
+04-19 15:09:14.619  1228 15528 D vendor.qti.bluetooth@1.0-wake_lock: Acquire wakelock is acquired 
+04-19 15:09:14.619  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Writing IBS_WAKE_ACK
+04-19 15:09:14.621 15424 15532 I bt_stack: [INFO:btm_ble_gap.cc(3326)] btm_ble_process_adv_pkt_cont Data Complete 52:b7:d9:5a:0e:d3
+04-19 15:09:14.660  1228 15528 I vendor.qti.bluetooth@1.0-ibs_handler: ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+04-19 15:09:14.660  1228 15528 D vendor.qti.bluetooth@1.0-ibs_handler: SerialClockVote: vote for UART CLK OFF

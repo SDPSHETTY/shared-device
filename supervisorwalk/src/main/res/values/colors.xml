@@ -1,0 +1,13 @@
+<resources>
+    <color name="bg_start">#F5EBDD</color>
+    <color name="bg_end">#F1F5E9</color>
+    <color name="card_primary">#FFF8EE</color>
+    <color name="card_secondary">#F3F8ED</color>
+    <color name="card_stroke">#D7DEC8</color>
+    <color name="text_primary">#274033</color>
+    <color name="text_secondary">#61756C</color>
+    <color name="chip_fill">#274033</color>
+    <color name="chip_text">#F8F6F1</color>
+    <color name="launcher_bg">#274033</color>
+    <color name="icon_bg">#B8742C</color>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.AssociatePick" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/text_primary</item>
+        <item name="colorOnPrimary">@color/chip_text</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

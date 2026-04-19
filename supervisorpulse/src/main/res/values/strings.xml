@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Team Pulse</string>
+    <string name="status_badge">Supervisor View</string>
+    <string name="hero_title">Floor coverage at a glance</string>
+    <string name="hero_subtitle">A lightweight shell for demo blueprints on Zebra handhelds. Use it to show the supervisor getting leadership tools after login.</string>
+    <string name="card_one_kicker">Team status</string>
+    <string name="card_one_title">Coverage and escalations</string>
+    <string name="card_one_body">Highlights staffing balance, open service requests, and hot spots across the sales floor.</string>
+    <string name="card_two_kicker">Operations</string>
+    <string name="card_two_title">Priority queue</string>
+    <string name="card_two_body">Surfaces callbacks, manager approvals, and rapid action items during peak store traffic.</string>
+</resources>

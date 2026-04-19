@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Shelf Scan</string>
+    <string name="status_badge">Associate View</string>
+    <string name="hero_title">Scan, confirm, move on</string>
+    <string name="hero_subtitle">A lightweight demo shell for handheld shelf checks, price verification, and fast recovery passes.</string>
+    <string name="card_one_kicker">Shelf health</string>
+    <string name="card_one_title">Price and label check</string>
+    <string name="card_one_body">Represents scanning shelf labels, verifying signage, and spotting gaps before they impact service.</string>
+    <string name="card_two_kicker">Recovery</string>
+    <string name="card_two_title">Out-of-stock follow-up</string>
+    <string name="card_two_body">Shows a simple destination app for replenishment cues, backroom checks, and floor recovery sweeps.</string>
+</resources>

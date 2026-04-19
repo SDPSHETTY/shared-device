@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pick List</string>
+    <string name="status_badge">Associate View</string>
+    <string name="hero_title">Stay on the next order</string>
+    <string name="hero_subtitle">A lightweight retail picking shell for showing the associate blueprint after login on Zebra devices.</string>
+    <string name="card_one_kicker">Fulfillment</string>
+    <string name="card_one_title">Open tote waves</string>
+    <string name="card_one_body">Shows active picks, tote readiness, and quick slot references for fast floor movement.</string>
+    <string name="card_two_kicker">Store support</string>
+    <string name="card_two_title">Priority pickups</string>
+    <string name="card_two_body">Highlights rush pickups, service desk requests, and handoff timing for busy shifts.</string>
+</resources>

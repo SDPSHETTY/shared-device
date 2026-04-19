@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="auth_screen_padding">20dp</dimen>
+    <dimen name="auth_panel_padding">18dp</dimen>
+    <dimen name="auth_title_size">28sp</dimen>
+    <dimen name="auth_subtitle_size">15sp</dimen>
+    <dimen name="auth_status_size">17sp</dimen>
+    <dimen name="auth_button_height">56dp</dimen>
+    <dimen name="auth_logout_height">52dp</dimen>
+    <dimen name="auth_orb_size">150dp</dimen>
+    <dimen name="auth_brand_size">64dp</dimen>
+</resources>
