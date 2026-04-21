@@ -34,7 +34,7 @@
         <activity
             android:name=".ui.ConfigActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.ZebraEsperBridge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

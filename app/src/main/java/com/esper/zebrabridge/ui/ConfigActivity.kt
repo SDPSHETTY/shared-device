@@ -106,6 +106,26 @@ class ConfigActivity : AppCompatActivity() {
             triggerSelectedRoleMove()
         }
 
+        // Add keyboard handling for password field
+        binding.passwordEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_DONE) {
+                triggerSelectedRoleMove()
+                true
+            } else {
+                false
+            }
+        }
+
+        // Clear errors when user starts typing
+        binding.passwordEditText.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                // Clear password field error when user starts typing
+                binding.passwordInputLayout.error = null
+            }
+        })
+
         val hasConfiguredRoles = configuredRoles.isNotEmpty()
         binding.roleDropdown.isEnabled = hasConfiguredRoles
         binding.passwordEditText.isEnabled = hasConfiguredRoles
@@ -319,6 +339,9 @@ class ConfigActivity : AppCompatActivity() {
         if (enteredPassword.isBlank()) {
             val message = getString(R.string.login_auth_required)
             updateUiState(status = message, busy = false, support = getString(R.string.login_footer))
+            // Clear any previous errors and focus on password field
+            binding.passwordInputLayout.error = null
+            binding.passwordEditText.requestFocus()
             return false
         }
 
@@ -333,9 +356,19 @@ class ConfigActivity : AppCompatActivity() {
         if (enteredPassword != expectedPassword) {
             val message = getString(R.string.login_auth_invalid)
             updateUiState(status = message, busy = false, support = getString(R.string.login_footer))
+            // Clear password field and show error on failed authentication
+            binding.passwordEditText.text?.clear()
+            binding.passwordInputLayout.error = getString(R.string.login_auth_invalid)
+            binding.passwordEditText.requestFocus()
+            // Scroll to ensure password field is visible
+            binding.formScrollView?.post {
+                binding.formScrollView?.smoothScrollTo(0, binding.passwordInputLayout.top)
+            }
             return false
         }
 
+        // Clear any previous errors on successful validation
+        binding.passwordInputLayout.error = null
         return true
     }
 
@@ -627,6 +660,12 @@ class ConfigActivity : AppCompatActivity() {
             binding = ActivityConfigBinding.inflate(layoutInflater)
             setContentView(binding.root)
             setupLoginButtonListeners()
+
+            // Clear password field and any errors
+            binding.passwordEditText.text?.clear()
+            binding.passwordInputLayout.error = null
+            binding.roleDropdownInputLayout.error = null
+
             preSelectRole?.let { preferredRole ->
                 getConfiguredRoles().firstOrNull { it == preferredRole }?.let { selectRole(it) }
             }
