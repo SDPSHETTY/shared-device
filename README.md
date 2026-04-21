@@ -183,6 +183,11 @@ adb install app/build/outputs/apk/release/app-release.apk
 
 ## 📋 Changelog
 
+### v1.0.19 (2026-04-20)
+- ✅ **Refined sign-in flow** - Role selection now uses a managed dropdown with a single login action
+- ✅ **Polished active session UI** - Clearer session summary, switch user workflow, and logout experience
+- ✅ **Validated on Zebra TC27** - Connected-device end-to-end login, switch user, and logout coverage
+
 ### v1.0.18 (2026-04-19)
 - 🚀 **Initial Production Release**
 - ✅ **Fixed all ANR crashes** - Enhanced findViewById safety with null checks

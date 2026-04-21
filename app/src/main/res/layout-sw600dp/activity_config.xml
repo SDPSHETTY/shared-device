@@ -210,6 +210,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/login_role_label"
+            android:textColor="@color/auth_text_secondary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/roleDropdownInputLayout"
+            style="@style/Widget.AuthApp.InputLayout.Dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/login_role_hint"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:endIconMode="dropdown_menu">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/roleDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="none"
+                android:maxLines="1"
+                android:textColor="@color/auth_input_text"
+                android:textColorHint="@color/auth_input_hint"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
             android:text="@string/login_password_label"
             android:textColor="@color/auth_text_secondary"
             android:textSize="13sp"
@@ -240,38 +274,13 @@
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="@string/login_role_label"
-            android:textColor="@color/auth_text_secondary"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-
         <Button
-            android:id="@+id/supervisorDemoButton"
+            android:id="@+id/loginButton"
             style="@style/Widget.AuthApp.Button.Primary"
             android:layout_width="match_parent"
             android:layout_height="@dimen/auth_button_height"
             android:layout_marginTop="10dp"
-            android:text="@string/login_button_supervisor" />
-
-        <Button
-            android:id="@+id/associateDemoButton"
-            style="@style/Widget.AuthApp.Button.Secondary"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_button_height"
-            android:layout_marginTop="12dp"
-            android:text="@string/login_button_associate" />
-
-        <Button
-            android:id="@+id/logoutDemoButton"
-            style="@style/Widget.AuthApp.Button.Outlined"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_logout_height"
-            android:layout_marginTop="16dp"
-            android:text="@string/login_button_logout" />
+            android:text="@string/login_button_submit" />
 
         <TextView
             android:id="@+id/supportTextView"

@@ -23,6 +23,18 @@
         <item name="endIconTint">@color/auth_text_secondary</item>
     </style>
 
+    <style name="Widget.AuthApp.InputLayout.Dropdown" parent="Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/auth_input_fill</item>
+        <item name="boxStrokeColor">@color/auth_input_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/auth_input_hint</item>
+        <item name="android:textColorHint">@color/auth_input_hint</item>
+        <item name="endIconTint">@color/auth_text_secondary</item>
+        <item name="simpleItemSelectedColor">@color/auth_accent_soft</item>
+        <item name="simpleItemSelectedRippleColor">@color/auth_accent_soft</item>
+    </style>
+
     <style name="Widget.AuthApp.Button.Primary" parent="Widget.Material3.Button">
         <item name="backgroundTint">@color/auth_button_primary</item>
         <item name="android:textColor">@color/auth_button_primary_text</item>

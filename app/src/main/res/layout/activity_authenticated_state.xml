@@ -1,289 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_auth_screen"
-    android:padding="@dimen/auth_screen_padding">
+    android:fillViewport="true">
 
-    <View
-        android:id="@+id/decorOrbView"
-        android:layout_width="@dimen/auth_orb_size"
-        android:layout_height="@dimen/auth_orb_size"
-        android:alpha="0.18"
-        android:background="@drawable/bg_auth_orb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:translationX="36dp"
-        android:translationY="-20dp" />
-
-    <!-- Header Section -->
-    <TextView
-        android:id="@+id/welcomeTitle"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:maxLines="2"
-        android:text="Welcome back"
-        android:textColor="@color/auth_text_primary"
-        android:textSize="@dimen/auth_title_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="@dimen/auth_screen_padding">
 
-    <TextView
-        android:id="@+id/sessionSubtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:maxLines="3"
-        android:text="You are currently signed in to this device"
-        android:textColor="@color/auth_text_secondary"
-        android:textSize="@dimen/auth_subtitle_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTitle" />
+        <View
+            android:id="@+id/decorOrbView"
+            android:layout_width="@dimen/auth_orb_size"
+            android:layout_height="@dimen/auth_orb_size"
+            android:alpha="0.18"
+            android:background="@drawable/bg_auth_orb"
+            android:translationX="36dp"
+            android:translationY="-20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Current User Card -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/currentUserCard"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="4dp"
-        app:strokeWidth="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sessionSubtitle">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/welcomeTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_auth_card"
-            android:orientation="vertical"
-            android:padding="@dimen/auth_panel_padding">
+            android:layout_marginTop="8dp"
+            android:maxLines="2"
+            android:text="@string/session_title"
+            android:textColor="@color/auth_text_primary"
+            android:textSize="@dimen/auth_title_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- User Info Row -->
+        <TextView
+            android:id="@+id/sessionSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="4"
+            android:text="@string/session_subtitle"
+            android:textColor="@color/auth_text_secondary"
+            android:textSize="@dimen/auth_subtitle_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeTitle" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/currentUserCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sessionSubtitle"
+            app:strokeWidth="0dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:layout_width="@dimen/auth_brand_size"
-                    android:layout_height="@dimen/auth_brand_size">
-
-                    <View
-                        android:id="@+id/userAvatarView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_auth_orb" />
-
-                    <TextView
-                        android:id="@+id/userInitial"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="S"
-                        android:textColor="@color/auth_text_primary"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </FrameLayout>
+                android:background="@drawable/bg_auth_card"
+                android:orientation="vertical"
+                android:padding="@dimen/auth_panel_padding">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <TextView
+                    <FrameLayout
+                        android:layout_width="@dimen/auth_brand_size"
+                        android:layout_height="@dimen/auth_brand_size">
+
+                        <View
+                            android:id="@+id/userAvatarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_auth_orb" />
+
+                        <TextView
+                            android:id="@+id/userInitial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="S"
+                            android:textColor="@color/auth_text_primary"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_role_label"
+                            android:textColor="@color/auth_text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/currentRoleText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Supervisor"
+                            android:textColor="@color/auth_text_primary"
+                            android:textSize="@dimen/auth_status_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/currentUserText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="John Doe"
+                            android:textColor="@color/auth_text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Current Role"
-                        android:textColor="@color/auth_text_secondary"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                        app:cardBackgroundColor="@color/auth_badge_bg"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
 
-                    <TextView
-                        android:id="@+id/currentRoleText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Supervisor"
-                        android:textColor="@color/auth_text_primary"
-                        android:textSize="@dimen/auth_status_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/currentUserText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="John Doe"
-                        android:textColor="@color/auth_text_secondary"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="@string/session_status_active"
+                            android:textColor="@color/auth_badge_text"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
-                <!-- Status Badge -->
-                <com.google.android.material.card.MaterialCardView
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="16dp"
+                    android:background="@color/auth_panel_stroke" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/auth_badge_bg"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="0dp">
+                    android:text="@string/session_summary_label"
+                    android:textColor="@color/auth_text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_auth_metric_card"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_duration_label"
+                            android:textColor="@color/auth_text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/shiftDurationText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="2h 45m"
+                            android:textColor="@color/auth_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_auth_metric_card"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_started_label"
+                            android:textColor="@color/auth_text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/sessionStartText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="09:15 AM"
+                            android:textColor="@color/auth_text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_auth_info_strip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="6dp"
-                        android:text="ACTIVE"
-                        android:textColor="@color/auth_badge_text"
-                        android:textSize="10sp"
+                        android:text="@string/session_device_label"
+                        android:textColor="@color/auth_accent_dark"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/sessionHintText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/session_hint_default"
+                        android:textColor="@color/auth_text_primary"
+                        android:textSize="13sp" />
+                </LinearLayout>
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <!-- Shift Timer Section -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="16dp"
-                android:background="@color/auth_panel_stroke" />
+        <LinearLayout
+            android:id="@+id/actionButtonsContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currentUserCard">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/session_actions_label"
+                android:textColor="@color/auth_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:layout_marginTop="6dp"
+                android:text="@string/session_actions_support"
+                android:textColor="@color/auth_text_secondary"
+                android:textSize="13sp" />
 
-                <!-- Shift Duration -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+            <Button
+                android:id="@+id/switchRoleButton"
+                style="@style/Widget.AuthApp.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/auth_button_height"
+                android:layout_marginTop="10dp"
+                android:text="@string/session_button_switch_user" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Shift Duration"
-                        android:textColor="@color/auth_text_secondary"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/shiftDurationText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="2h 45m"
-                        android:textColor="@color/auth_text_primary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Session Start Time -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Started At"
-                        android:textColor="@color/auth_text_secondary"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/sessionStartText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="09:15 AM"
-                        android:textColor="@color/auth_text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
+            <Button
+                android:id="@+id/endShiftButton"
+                style="@style/Widget.AuthApp.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/auth_button_height"
+                android:layout_marginTop="10dp"
+                android:text="@string/session_button_logout" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-    <!-- Action Buttons -->
-    <LinearLayout
-        android:id="@+id/actionButtonsContainer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/currentUserCard">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Session Actions"
-            android:textColor="@color/auth_text_secondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <!-- Switch Role Button -->
-        <Button
-            android:id="@+id/switchRoleButton"
-            style="@style/Widget.AuthApp.Button.Primary"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_button_height"
-            android:layout_marginTop="10dp"
-            android:text="Switch Role" />
-
-        <!-- End Shift / Logout Button -->
-        <Button
-            android:id="@+id/endShiftButton"
-            style="@style/Widget.AuthApp.Button.Outlined"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_button_height"
-            android:layout_marginTop="10dp"
-            android:text="End Shift &amp; Logout" />
-
-    </LinearLayout>
-
-    <!-- Footer Information -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/deviceInfoText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="Device: MA-YUR-A0BAB"
-            android:textColor="@color/auth_text_secondary"
-            android:textSize="11sp" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actionButtonsContainer">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:text="All activities are monitored for security and productivity"
-            android:textColor="@color/auth_text_muted"
-            android:textSize="10sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/deviceInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Device: MA-YUR-A0BAB"
+                android:textColor="@color/auth_text_secondary"
+                android:textSize="11sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="All activities are monitored for security and productivity"
+                android:textColor="@color/auth_text_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

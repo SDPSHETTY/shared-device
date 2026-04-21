@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.os.Handler
 import android.os.Looper
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 
@@ -33,6 +34,7 @@ class ConfigActivity : AppCompatActivity() {
     private var runtimeInfo: EsperRuntimeInfo? = null
     private lateinit var roleOne: RoleAction
     private lateinit var roleTwo: RoleAction
+    private var selectedRoleAction: RoleAction? = null
     private var isTransitionInProgress = false
     private var transitionJob: Job? = null
 
@@ -90,19 +92,51 @@ class ConfigActivity : AppCompatActivity() {
     }
 
     private fun setupLoginButtonListeners() {
-        binding.supervisorDemoButton.text = roleOne.label
-        binding.associateDemoButton.text = roleTwo.label
-        binding.logoutDemoButton.isEnabled = AppConfig.getHomeGroupId().isNotBlank()
+        val configuredRoles = getConfiguredRoles()
+        val labels = configuredRoles.map { it.label }
 
-        binding.supervisorDemoButton.setOnClickListener {
-            triggerRoleMove(roleOne)
+        binding.roleDropdown.setAdapter(
+            ArrayAdapter(this, android.R.layout.simple_list_item_1, labels)
+        )
+        binding.roleDropdown.setOnItemClickListener { _, _, position, _ ->
+            selectedRoleAction = configuredRoles.getOrNull(position)
+            binding.roleDropdownInputLayout.error = null
         }
-        binding.associateDemoButton.setOnClickListener {
-            triggerRoleMove(roleTwo)
+        binding.loginButton.setOnClickListener {
+            triggerSelectedRoleMove()
         }
-        binding.logoutDemoButton.setOnClickListener {
-            triggerLogoutMove()
+
+        val hasConfiguredRoles = configuredRoles.isNotEmpty()
+        binding.roleDropdown.isEnabled = hasConfiguredRoles
+        binding.passwordEditText.isEnabled = hasConfiguredRoles
+        binding.loginButton.isEnabled = hasConfiguredRoles
+
+        when {
+            configuredRoles.size == 1 -> selectRole(configuredRoles.first())
+            else -> clearSelectedRole()
         }
+
+        if (!hasConfiguredRoles) {
+            updateUiState(
+                status = getString(R.string.login_not_available),
+                busy = false,
+                support = getString(R.string.login_footer_retry)
+            )
+        }
+    }
+
+    private fun triggerSelectedRoleMove() {
+        val selectedRole = selectedRoleAction
+        if (selectedRole == null) {
+            binding.roleDropdownInputLayout.error = getString(R.string.login_role_required)
+            updateUiState(
+                status = getString(R.string.login_role_required),
+                busy = false,
+                support = getString(R.string.login_footer)
+            )
+            return
+        }
+        triggerRoleMove(selectedRole)
     }
 
     private fun setupAuthenticatedButtonListeners() {
@@ -113,13 +147,13 @@ class ConfigActivity : AppCompatActivity() {
             Logger.i(TAG, "Setting up authenticated button listeners - switchRoleButton: ${switchRoleButton != null}, endShiftButton: ${endShiftButton != null}")
 
             switchRoleButton?.setOnClickListener {
-                Logger.i(TAG, "Switch role button clicked")
-                showSwitchRoleDialog()
+                Logger.i(TAG, "Switch user button clicked")
+                startSwitchUserFlow()
             } ?: Logger.e(TAG, "switchRoleButton not found!")
 
             endShiftButton?.setOnClickListener {
-                Logger.i(TAG, "End shift button clicked")
-                endShiftAndLogout()
+                Logger.i(TAG, "Logout button clicked")
+                logoutActiveSession()
             } ?: Logger.e(TAG, "endShiftButton not found!")
         } catch (e: Exception) {
             Logger.e(TAG, "Error setting up authenticated button listeners", e)
@@ -174,10 +208,6 @@ class ConfigActivity : AppCompatActivity() {
                 resolved
             }.onSuccess { resolved ->
                 runtimeInfo = resolved
-                // Only access binding elements when in login mode (binding is only initialized in login mode)
-                if (!isAuthenticatedMode && ::binding.isInitialized) {
-                    binding.logoutDemoButton.isEnabled = AppConfig.getHomeGroupId().isNotBlank()
-                }
                 renderReadyState()
                 Logger.i(TAG, "SDK warm-up complete for device ${resolved.deviceId}")
             }.onFailure { throwable ->
@@ -284,89 +314,6 @@ class ConfigActivity : AppCompatActivity() {
         }
     }
 
-    private fun triggerLogoutMove() {
-        val targetGroupId = AppConfig.getHomeGroupId()
-        val label = LOGOUT_LABEL
-        if (!AppConfig.isApiConfigured()) {
-            val message = getString(R.string.login_not_configured)
-            updateUiState(status = message, busy = false, support = getString(R.string.login_footer_retry))
-            return
-        }
-
-        if (targetGroupId.isBlank()) {
-            val message = getString(R.string.logout_not_ready)
-            updateUiState(status = message, busy = false, support = getString(R.string.login_footer_retry))
-            return
-        }
-
-        isTransitionInProgress = true
-        setButtonsEnabled(false)
-        updateUiState(
-            status = getString(R.string.logout_in_progress),
-            busy = true,
-            support = getString(R.string.logout_footer, AppConfig.getHomeGroupName().ifBlank { getString(R.string.logout_fallback_name) })
-        )
-
-        // Add timeout protection for logout as well
-        val logoutTimeoutJob = lifecycleScope.launch {
-            delay(30000) // 30 second timeout
-            if (isTransitionInProgress) {
-                isTransitionInProgress = false
-                updateUiState(
-                    status = "Logout timed out. Please try again.",
-                    busy = false,
-                    support = getString(R.string.login_footer_retry)
-                )
-                setButtonsEnabled(true)
-                Logger.i(TAG, "Logout transition timed out")
-            }
-        }
-
-        lifecycleScope.launch {
-            runCatching {
-                val resolvedRuntime = runtimeInfo ?: esperDeviceManager.resolveRuntimeInfo(
-                    apiKey = AppConfig.getEsperApiKey(),
-                    fallbackBaseUrl = AppConfig.getEsperBaseUrl(),
-                    fallbackEnterpriseId = AppConfig.getEnterpriseId(),
-                    fallbackDeviceId = AppConfig.getDeviceIdOverride()
-                )
-                runtimeInfo = resolvedRuntime
-                esperApiClient.moveDeviceToGroup(
-                    config = resolvedRuntime.tenantConfig,
-                    deviceId = resolvedRuntime.deviceId,
-                    destinationGroupId = targetGroupId
-                )
-                resolvedRuntime.deviceId
-            }.onSuccess { deviceId ->
-                logoutTimeoutJob.cancel() // Cancel timeout since we succeeded
-                updateUiState(
-                    status = getString(R.string.logout_success),
-                    busy = true,
-                    support = getString(R.string.logout_footer, AppConfig.getHomeGroupName().ifBlank { getString(R.string.logout_fallback_name) })
-                )
-                if (!isAuthenticatedMode) {
-                    binding.passwordEditText.text?.clear()
-                }
-                Logger.i(TAG, "Role move succeeded for $label on device $deviceId to $targetGroupId")
-
-                // End user session on logout
-                AppConfig.endUserSession()
-
-                completeTransitionAfterSuccess()
-            }.onFailure { throwable ->
-                logoutTimeoutJob.cancel() // Cancel timeout since we failed
-                isTransitionInProgress = false
-                updateUiState(
-                    status = userMessageForState(AppUiState.LOGOUT_FAILED, throwable, label),
-                    busy = false,
-                    support = getString(R.string.login_footer_retry)
-                )
-                Logger.e(TAG, "Role move failed for $label", throwable)
-                setButtonsEnabled(true)
-            }
-        }
-    }
-
     private fun isPasswordAccepted(roleAction: RoleAction): Boolean {
         val enteredPassword = binding.passwordEditText.text?.toString().orEmpty()
         if (enteredPassword.isBlank()) {
@@ -394,10 +341,10 @@ class ConfigActivity : AppCompatActivity() {
 
     private fun setButtonsEnabled(enabled: Boolean) {
         if (!isAuthenticatedMode && ::binding.isInitialized) {
-            binding.supervisorDemoButton.isEnabled = enabled
-            binding.associateDemoButton.isEnabled = enabled
-            binding.logoutDemoButton.isEnabled = enabled && AppConfig.getHomeGroupId().isNotBlank()
-            binding.passwordEditText.isEnabled = enabled
+            val hasConfiguredRoles = getConfiguredRoles().isNotEmpty()
+            binding.roleDropdown.isEnabled = enabled && hasConfiguredRoles
+            binding.loginButton.isEnabled = enabled && hasConfiguredRoles
+            binding.passwordEditText.isEnabled = enabled && hasConfiguredRoles
         } else if (isAuthenticatedMode) {
             // In authenticated mode, safely update buttons
             try {
@@ -514,9 +461,7 @@ class ConfigActivity : AppCompatActivity() {
         val buttonAnimation: Animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
         buttonAnimation.duration = 380L
         buttonAnimation.startOffset = 180L
-        binding.supervisorDemoButton.startAnimation(buttonAnimation)
-        binding.associateDemoButton.startAnimation(buttonAnimation)
-        binding.logoutDemoButton.startAnimation(buttonAnimation)
+        binding.loginButton.startAnimation(buttonAnimation)
     }
 
     private fun userMessageForState(state: AppUiState, throwable: Throwable?, label: String?): String {
@@ -527,7 +472,6 @@ class ConfigActivity : AppCompatActivity() {
                 throwable?.message?.contains("Network connection", ignoreCase = true) == true -> getString(R.string.login_network_required)
                 else -> getString(R.string.login_failed_generic)
             }
-            AppUiState.LOGOUT_FAILED -> getString(R.string.logout_failed)
             AppUiState.READY_FAILED -> when {
                 throwable?.message?.contains("Network connection", ignoreCase = true) == true -> getString(R.string.login_waiting_for_network)
                 else -> getString(R.string.login_preparing_retry)
@@ -542,18 +486,36 @@ class ConfigActivity : AppCompatActivity() {
             val currentRole = AppConfig.getCurrentUserRole()
             val currentUser = AppConfig.getCurrentUserName()
             val sessionStart = AppConfig.getSessionStartTime()
+            val resolvedRole = currentRole.ifBlank { getString(R.string.session_role_unknown) }
+            val resolvedUser = currentUser.ifBlank { getString(R.string.session_user_placeholder) }
 
             // Update user info safely
+            findViewById<TextView>(R.id.welcomeTitle)?.apply {
+                text = if (currentRole.isNotBlank()) {
+                    getString(R.string.session_title_role, currentRole)
+                } else {
+                    getString(R.string.session_title)
+                }
+            }
+
+            findViewById<TextView>(R.id.sessionSubtitle)?.apply {
+                text = if (currentRole.isNotBlank()) {
+                    getString(R.string.session_subtitle_role, currentRole)
+                } else {
+                    getString(R.string.session_subtitle)
+                }
+            }
+
             findViewById<TextView>(R.id.currentRoleText)?.apply {
-                text = currentRole.ifEmpty { "Unknown Role" }
+                text = resolvedRole
             }
 
             findViewById<TextView>(R.id.currentUserText)?.apply {
-                text = currentUser.ifEmpty { "Active User" }
+                text = resolvedUser
             }
 
             findViewById<TextView>(R.id.userInitial)?.apply {
-                text = currentRole.firstOrNull()?.toString()?.uppercase() ?: "U"
+                text = resolvedRole.firstOrNull()?.toString()?.uppercase() ?: "U"
             }
 
             // Update session start time
@@ -567,7 +529,15 @@ class ConfigActivity : AppCompatActivity() {
             // Update device info if available
             val deviceId = runtimeInfo?.deviceId ?: "Unknown Device"
             findViewById<TextView>(R.id.deviceInfoText)?.apply {
-                text = "Device: $deviceId"
+                text = getString(R.string.session_device_info, deviceId)
+            }
+
+            findViewById<TextView>(R.id.sessionHintText)?.apply {
+                text = if (currentRole.isNotBlank()) {
+                    getString(R.string.session_hint_role, currentRole)
+                } else {
+                    getString(R.string.session_hint_default)
+                }
             }
 
             updateShiftTimer()
@@ -604,38 +574,22 @@ class ConfigActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSwitchRoleDialog() {
-        val options = arrayOf(roleOne.label, roleTwo.label)
+    private fun startSwitchUserFlow() {
+        transitionToLoginState()
+    }
+
+    private fun logoutActiveSession() {
         val builder = android.app.AlertDialog.Builder(this)
-        builder.setTitle("Switch to Different Role")
-        builder.setItems(options) { _, which ->
-            val selectedRole = if (which == 0) roleOne else roleTwo
-            switchToRole(selectedRole)
+        builder.setTitle(R.string.session_logout_title)
+        builder.setMessage(R.string.session_logout_message)
+        builder.setPositiveButton(R.string.session_logout_confirm) { _, _ ->
+            performLogout()
         }
         builder.setNegativeButton("Cancel", null)
         builder.show()
     }
 
-    private fun switchToRole(role: RoleAction) {
-        // End current session
-        AppConfig.endUserSession()
-
-        // Transition back to login for new role
-        transitionToLoginState(preSelectRole = role)
-    }
-
-    private fun endShiftAndLogout() {
-        val builder = android.app.AlertDialog.Builder(this)
-        builder.setTitle("End Shift")
-        builder.setMessage("Are you sure you want to end your shift and logout? This will return the device to the shared profile.")
-        builder.setPositiveButton("End Shift") { _, _ ->
-            performEndShift()
-        }
-        builder.setNegativeButton("Cancel", null)
-        builder.show()
-    }
-
-    private fun performEndShift() {
+    private fun performLogout() {
         lifecycleScope.launch {
             runCatching {
                 // Move back to home group if configured
@@ -654,15 +608,11 @@ class ConfigActivity : AppCompatActivity() {
                     )
                 }
             }.onSuccess {
-                // End session
                 AppConfig.endUserSession()
-                Logger.i(TAG, "Shift ended and session terminated")
-
-                // Transition back to login
+                Logger.i(TAG, "User logged out and session terminated")
                 transitionToLoginState()
             }.onFailure { throwable ->
-                Logger.e(TAG, "Failed to end shift", throwable)
-                // Still end session even if API call fails
+                Logger.e(TAG, "Failed to move device during logout", throwable)
                 AppConfig.endUserSession()
                 transitionToLoginState()
             }
@@ -677,6 +627,9 @@ class ConfigActivity : AppCompatActivity() {
             binding = ActivityConfigBinding.inflate(layoutInflater)
             setContentView(binding.root)
             setupLoginButtonListeners()
+            preSelectRole?.let { preferredRole ->
+                getConfiguredRoles().firstOrNull { it == preferredRole }?.let { selectRole(it) }
+            }
             startEntryAnimation()
             startHeroAnimation()
             renderReadyState()
@@ -694,14 +647,12 @@ class ConfigActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "ConfigActivity"
-        private const val LOGOUT_LABEL = "Logout"
     }
 
     private enum class AppUiState {
         SIGNING_IN,
         SIGNED_IN,
         SIGN_IN_FAILED,
-        LOGOUT_FAILED,
         READY_FAILED
     }
 
@@ -710,4 +661,22 @@ class ConfigActivity : AppCompatActivity() {
         val groupId: String,
         val password: String
     )
+
+    private fun getConfiguredRoles(): List<RoleAction> {
+        return listOf(roleOne, roleTwo).filter { role ->
+            role.label.isNotBlank() && role.groupId.isNotBlank()
+        }
+    }
+
+    private fun selectRole(role: RoleAction) {
+        selectedRoleAction = role
+        binding.roleDropdown.setText(role.label, false)
+        binding.roleDropdownInputLayout.error = null
+    }
+
+    private fun clearSelectedRole() {
+        selectedRoleAction = null
+        binding.roleDropdown.setText("", false)
+        binding.roleDropdownInputLayout.error = null
+    }
 }

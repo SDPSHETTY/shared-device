@@ -33,4 +33,7 @@
     <color name="auth_button_outline_text">#285674</color>
     <color name="auth_scrim">#BF12324A</color>
     <color name="auth_loading_card">#F7FBFF</color>
+    <color name="auth_metric_card">#F3F8FC</color>
+    <color name="auth_metric_stroke">#D6E3ED</color>
+    <color name="auth_info_bg">#E7F2FB</color>
 </resources>
