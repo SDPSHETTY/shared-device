@@ -2,7 +2,7 @@
 
 A professional enterprise authentication solution for shared Android devices in warehouse and logistics environments, featuring role-based access control, shift management, and seamless integration with Esper Device Management.
 
-[![Version](https://img.shields.io/badge/version-1.0.20-blue.svg)](https://github.com/SDPSHETTY/shared-device/releases)
+[![Version](https://img.shields.io/badge/version-1.0.20-blue.svg)](https://github.com/esper-io/shared-device/releases)
 [![Android](https://img.shields.io/badge/platform-Android-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/language-Kotlin-orange.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/license-Private-red.svg)](#)
@@ -54,7 +54,7 @@ shared-device/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SDPSHETTY/shared-device.git
+   git clone https://github.com/esper-io/shared-device.git
    cd shared-device
    ```
 
