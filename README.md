@@ -1,6 +1,6 @@
 # 📱 Shared Device Authentication App
 
-A professional enterprise authentication solution for shared Android devices in warehouse and logistics environments, featuring role-based access control, shift management, and seamless integration with Zebra MDM and Esper Device Management.
+A professional enterprise authentication solution for shared Android devices in warehouse and logistics environments, featuring role-based access control, shift management, and seamless integration with Esper Device Management.
 
 [![Version](https://img.shields.io/badge/version-1.0.20-blue.svg)](https://github.com/SDPSHETTY/shared-device/releases)
 [![Android](https://img.shields.io/badge/platform-Android-green.svg)](https://android.com)
@@ -18,7 +18,7 @@ This application transforms Android devices into secure, shared workstations whe
 - **🎨 Professional UI**: Material Design 3 interface optimized for enterprise environments
 - **🔄 Session Management**: Seamless role switching with proper logout workflows
 - **📱 Dual UI Modes**: Login state and authenticated state with context-aware interfaces
-- **🏢 Enterprise Integration**: Zebra MDM and Esper Device Management API integration
+- **🏢 Enterprise Integration**: Esper Device Management API integration
 - **🛡️ Security**: Managed configuration support with encrypted session data
 
 ## 🏗️ Architecture
@@ -182,9 +182,9 @@ if (AppConfig.isSessionActive()) {
 - Role-based usage analytics
 
 ### Device Management Integration
-- **Zebra MDM**: Identity Guardian integration for lockscreen detection
 - **Esper API**: Automated device group management and app deployment
 - **Group Switching**: Dynamic workspace preparation based on user role
+- **Device Optimization**: Tested and optimized for Zebra enterprise devices
 
 ### Security Features
 - Encrypted session storage
@@ -289,7 +289,7 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 
 ### Previous Versions
 - v1.0.17: Core authentication and session management
-- v1.0.16: Zebra MDM integration and UI improvements
+- v1.0.16: UI improvements and device optimization
 - Earlier versions: Foundation development and testing
 
 ## 🤝 Contributing
@@ -312,7 +312,7 @@ This is a private enterprise project. For internal development:
 ### Technical Support
 - **Enterprise Issues**: Contact IT administrator
 - **Device Management**: Esper Console documentation
-- **Zebra Integration**: Zebra Technologies support
+- **Zebra Hardware**: For device-specific issues, consult Zebra Technologies support
 
 ### Development Support
 - **Architecture Questions**: Review codebase documentation
