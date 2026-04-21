@@ -2,7 +2,7 @@
 
 A professional enterprise authentication solution for shared Android devices in warehouse and logistics environments, featuring role-based access control, shift management, and seamless integration with Zebra MDM and Esper Device Management.
 
-[![Version](https://img.shields.io/badge/version-1.0.18-blue.svg)](https://github.com/SDPSHETTY/shared-device/releases)
+[![Version](https://img.shields.io/badge/version-1.0.20-blue.svg)](https://github.com/SDPSHETTY/shared-device/releases)
 [![Android](https://img.shields.io/badge/platform-Android-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/language-Kotlin-orange.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/license-Private-red.svg)](#)
@@ -72,37 +72,88 @@ shared-device/
    adb install app/build/outputs/apk/release/app-release.apk
    ```
 
-## ⚙️ Configuration
+## ⚙️ Setup & Configuration
 
-### Managed Configuration (Recommended)
-The app supports Android Enterprise managed configuration for deployment via Esper Console:
+### 🏢 Esper Console Setup (3-Step Process)
 
-```xml
-<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
-    <restriction android:key="api_key"
-                android:restrictionType="string"
-                android:title="Esper API Key" />
-    <restriction android:key="base_url"
-                android:restrictionType="string"
-                android:title="Esper Base URL"
-                android:defaultValue="https://espersalesdemo.esper.cloud" />
-    <!-- Additional configuration options available -->
-</restrictions>
+#### **Step 1: Create Device Groups**
+Create 3 device groups in Esper Console:
+- **Home Group** - Default/logout state (shared device mode)
+- **Manager Group** - Manager role workspace
+- **Team Lead Group** - Team Lead role workspace
+
+#### **Step 2: Create Blueprints**
+Create 3 blueprints with appropriate app assignments:
+- **Home Blueprint** - Authentication app only (assigned to Home Group)
+- **Manager Blueprint** - Manager tools + permissions (assigned to Manager Group)
+- **Team Lead Blueprint** - Team Lead tools + permissions (assigned to Team Lead Group)
+
+#### **Step 3: Configure Managed Settings**
+In Esper Console, configure the authentication app with managed configuration:
+
+```json
+{
+  "api_key": "your_esper_api_key_here",
+  "role_one_label": "Manager",
+  "role_two_label": "Team Lead",
+  "role_one_group_id": "manager-group-uuid-here",
+  "role_one_password": "manager_password",
+  "role_two_group_id": "teamlead-group-uuid-here",
+  "role_two_password": "teamlead_password"
+}
 ```
 
-### Manual Configuration
-For testing environments, configuration can be set locally through the UI.
+**📝 Configuration Notes:**
+- **API Key**: Get from Esper Console → Settings → API Keys
+- **Group IDs**: Copy from Device Groups → Group Details → UUID
+- **Base URL**: Automatically detected (no longer required)
+- **Passwords**: Set secure passwords for each role
+
+### 🔄 How Role Switching Works
+
+1. **Device starts** → Assigned to Home Group (auth app only)
+2. **User selects role** → Enters password → **App moves device to role group**
+3. **Role-specific blueprint activates** → Appropriate apps/permissions load
+4. **Switch User/Logout** → Device returns to Home Group
+
+### 🚀 Deployment Checklist
+
+- [ ] Upload auth app to Esper Console
+- [ ] Create 3 device groups (Home, Manager, Team Lead)
+- [ ] Create 3 blueprints with correct app assignments
+- [ ] Configure managed settings with API key and group IDs
+- [ ] Assign devices to Home Group initially
+- [ ] Test role switching functionality
+- [ ] Deploy to production devices
 
 ## 🎮 Usage
 
-### User Workflow
+### 👥 User Workflow
 
-1. **Device Launch**: App detects existing session or shows login interface
-2. **Role Selection**: User selects Manager or Team Lead role
-3. **Authentication**: Password verification with role-specific access
-4. **Active Session**: Professional dashboard with shift timer and session controls
-5. **Role Switching**: Seamless transition between roles without device reset
-6. **Session End**: Secure logout returns device to shared state
+1. **Device Launch**: Shows login interface with role dropdown
+2. **Role Selection**: User selects "Manager" or "Team Lead" from dropdown
+3. **Authentication**: Enters role-specific password
+4. **Device Group Switch**: App automatically moves device to appropriate group
+5. **Role Workspace Loads**: Blueprint activates with role-specific apps/permissions
+6. **Active Session**: Dashboard shows shift timer, user info, and session controls
+7. **Role Switching**: "Switch User" button transitions to different role seamlessly
+8. **Session End**: "Logout" returns device to Home Group (shared state)
+
+### 🔧 Administrator Workflow
+
+1. **Initial Setup**: Create groups (Home, Manager, Team Lead) and blueprints
+2. **App Deployment**: Upload auth app and configure managed settings
+3. **Device Assignment**: Assign devices to Home Group initially
+4. **Testing**: Verify role switching moves devices between groups correctly
+5. **Monitoring**: Track device group changes and user sessions in Esper Console
+
+### 📱 Device States
+
+| State | Group | Blueprint | Apps Available |
+|-------|--------|-----------|----------------|
+| **Shared/Logout** | Home Group | Home Blueprint | Auth app only |
+| **Manager Session** | Manager Group | Manager Blueprint | Auth app + Manager tools |
+| **Team Lead Session** | Team Lead Group | Team Lead Blueprint | Auth app + Team Lead tools |
 
 ### Session Management
 
@@ -170,18 +221,57 @@ if (AppConfig.isSessionActive()) {
 
 ## 🚀 Deployment
 
-### Esper Console Deployment (Recommended)
-1. Build release APK: `./gradlew assembleRelease`
-2. Upload to Esper Console
-3. Configure managed settings
-4. Deploy to device groups
+### Production Deployment via Esper Console
 
-### Manual Installation
+#### **Quick Setup for New Users:**
+1. **Upload APK**
+   - Build release APK: `./gradlew assembleRelease`
+   - Upload `app-release.apk` to Esper Console → Apps
+
+2. **Create Infrastructure**
+   ```
+   Device Groups: Home → Manager → Team Lead
+   Blueprints: Home BP → Manager BP → Team Lead BP
+   App Assignments: Auth app to all groups + role-specific apps
+   ```
+
+3. **Configure Managed Settings**
+   - Navigate to Apps → Shared device → Managed Config
+   - Paste your configuration JSON (see Configuration section above)
+
+4. **Deploy & Test**
+   - Assign test device to Home Group
+   - Verify role switching works between groups
+   - Deploy to production devices
+
+#### **Configuration Example:**
+```json
+{
+  "api_key": "97ekzQ6mr71a1C7Yazzjin2dV1F9kQ",
+  "role_one_label": "Manager",
+  "role_two_label": "Team Lead",
+  "role_one_group_id": "2264336c-2ea1-46bb-8396-5593ebe4c27b",
+  "role_one_password": "sup123",
+  "role_two_group_id": "8ba0219c-ff8d-4fff-940e-fdc35b5d8a6b",
+  "role_two_password": "ass123"
+}
+```
+
+### Development Installation
 ```bash
-adb install app/build/outputs/apk/release/app-release.apk
+adb install app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ## 📋 Changelog
+
+### v1.0.20 (2026-04-21) - **Latest**
+- 🔧 **Fixed keyboard and password field issues** - Major UX improvements for Zebra devices
+- ✅ **Added NestedScrollView wrapper** - Form scrolls when keyboard appears, password field stays visible
+- ✅ **Enhanced password field handling** - Auto-clear on failed login, immediate error feedback
+- ✅ **Improved keyboard interaction** - Press "Done" key to submit login, live error clearing
+- ✅ **Better state management** - Clean transitions during role switching and error recovery
+- ✅ **Zebra device optimization** - Changed to `adjustPan` window mode for better compatibility
+- 🧪 **End-to-end tested** - Comprehensive validation on Zebra TC27 devices
 
 ### v1.0.19 (2026-04-20)
 - ✅ **Refined sign-in flow** - Role selection now uses a managed dropdown with a single login action
@@ -228,6 +318,37 @@ This is a private enterprise project. For internal development:
 - **Architecture Questions**: Review codebase documentation
 - **API Integration**: Esper Device SDK documentation
 - **Build Issues**: Check Gradle configuration
+
+## 🔧 Troubleshooting
+
+### Common Setup Issues
+
+**❌ "Role switching not working"**
+- ✅ Verify API key has device management permissions
+- ✅ Check group IDs are correct UUIDs from Esper Console
+- ✅ Ensure device has internet connectivity
+- ✅ Confirm blueprints are assigned to correct groups
+
+**❌ "App not launching after role switch"**
+- ✅ Verify role-specific apps are assigned to blueprints
+- ✅ Check blueprint is properly assigned to device group
+- ✅ Allow time for blueprint activation (30-60 seconds)
+
+**❌ "Password authentication failing"**
+- ✅ Check managed config JSON syntax is valid
+- ✅ Verify passwords match configured values exactly
+- ✅ Ensure app has received managed configuration
+
+**❌ "Device stuck in loading state"**
+- ✅ Check device internet connectivity
+- ✅ Verify Esper API endpoint is accessible
+- ✅ Check device logs for API errors
+- ✅ Restart app if timeout occurs (30 second limit)
+
+### Debug Information
+- **App Logs**: `adb logcat | grep AuthApp`
+- **Device Group**: Check Esper Console → Devices → [Device] → Group
+- **Config Status**: Look for managed configuration in app settings
 
 ## 🔒 Security & Privacy
 
