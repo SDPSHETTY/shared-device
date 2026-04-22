@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ZebraEsperBridge" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.SharedDeviceAuth" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/auth_accent</item>
         <item name="colorSecondary">@color/seed_dark</item>
         <item name="colorSurface">@color/auth_panel</item>

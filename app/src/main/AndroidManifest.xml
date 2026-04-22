@@ -9,10 +9,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="com.zebra.mdna.els.permission.PROVIDER" />
+    <!-- Zebra DNA integration permissions (optional) -->
+    <!-- <uses-permission android:name="com.zebra.mdna.els.permission.PROVIDER" /> -->
 
     <queries>
-        <package android:name="com.zebra.mdna.els" />
+        <!-- <package android:name="com.zebra.mdna.els" /> -->
         <package android:name="io.shoonya.shoonyadpc" />
     </queries>
 
@@ -24,7 +25,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@drawable/ic_bridge_notification"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ZebraEsperBridge"
+        android:theme="@style/Theme.SharedDeviceAuth"
         tools:targetApi="31">
 
         <meta-data
@@ -35,7 +36,7 @@
             android:name=".ui.ConfigActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.ZebraEsperBridge">
+            android:theme="@style/Theme.SharedDeviceAuth">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

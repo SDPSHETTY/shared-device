@@ -15,8 +15,8 @@ android {
         applicationId = "com.esper.authapp"
         minSdk = 26
         targetSdk = 33
-        versionCode = 23
-        versionName = "1.0.22"
+        versionCode = 24
+        versionName = "2.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -12,7 +12,7 @@ import com.esper.authapp.R
 import com.esper.authapp.ui.ConfigActivity
 
 object NotificationHelper {
-    const val CHANNEL_ID = "zebra_esper_bridge_channel"
+    const val CHANNEL_ID = "shared_device_auth_channel"
     const val NOTIFICATION_ID = 4107
 
     fun ensureChannel(context: Context) {

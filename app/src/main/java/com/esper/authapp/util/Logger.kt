@@ -3,7 +3,7 @@ package com.esper.authapp.util
 import android.util.Log
 
 object Logger {
-    private const val PREFIX = "ZebraBridge"
+    private const val PREFIX = "SharedDeviceAuth"
 
     fun d(tag: String, message: String) {
         Log.d("$PREFIX:$tag", message)

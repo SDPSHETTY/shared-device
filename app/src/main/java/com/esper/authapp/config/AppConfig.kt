@@ -12,7 +12,7 @@ import java.security.MessageDigest
 
 object AppConfig {
     private const val TAG = "AppConfig"
-    private const val PREFS_NAME = "zebra_esper_bridge_prefs"
+    private const val PREFS_NAME = "shared_device_auth_prefs"
     private const val KEY_API_KEY = "api_key"
     private const val KEY_BASE_URL = "base_url"
     private const val KEY_ENTERPRISE_ID = "enterprise_id"
@@ -27,14 +27,6 @@ object AppConfig {
     private const val KEY_ROLE_ONE_PASSWORD = "role_one_password"
     private const val KEY_ROLE_TWO_PASSWORD = "role_two_password"
     private const val KEY_ROLE_MAPPINGS = "role_mappings"
-    private const val KEY_ZEBRA_LOCKSCREEN_URI = "zebra_lockscreen_uri"
-    private const val KEY_ZEBRA_CURRENT_SESSION_URI = "zebra_current_session_uri"
-    private const val KEY_ZEBRA_ROLE_FIELD = "zebra_role_field"
-    private const val KEY_ZEBRA_USER_ID_FIELD = "zebra_user_id_field"
-    private const val KEY_ZEBRA_EVENT_TYPE_FIELD = "zebra_event_type_field"
-    private const val KEY_ZEBRA_LOGGED_IN_STATE_FIELD = "zebra_logged_in_state_field"
-    private const val KEY_ZEBRA_LOGIN_STATE_VALUE = "zebra_login_state_value"
-    private const val KEY_ZEBRA_LOGOUT_STATE_VALUE = "zebra_logout_state_value"
 
     // Session Management Keys
     private const val KEY_CURRENT_SESSION_ACTIVE = "current_session_active"
@@ -53,14 +45,6 @@ object AppConfig {
     private const val KEY_LAST_MANAGED_API_KEY = "last_managed_api_key"
 
     private const val DEFAULT_BASE_URL = "https://espersalesdemo.esper.cloud"
-    private const val DEFAULT_ZEBRA_LOCKSCREEN_URI = "content://com.zebra.mdna.els.provider/lockscreenstatus/state"
-    private const val DEFAULT_ZEBRA_CURRENT_SESSION_URI = "content://com.zebra.mdna.els.provider/v2/currentsession"
-    private const val DEFAULT_ZEBRA_ROLE_FIELD = "userRole"
-    private const val DEFAULT_ZEBRA_USER_ID_FIELD = "userId"
-    private const val DEFAULT_ZEBRA_EVENT_TYPE_FIELD = "eventType"
-    private const val DEFAULT_ZEBRA_LOGGED_IN_STATE_FIELD = "userLoggedInState"
-    private const val DEFAULT_ZEBRA_LOGIN_STATE_VALUE = "HIDDEN"
-    private const val DEFAULT_ZEBRA_LOGOUT_STATE_VALUE = "SHOWN"
 
     @Volatile
     private var appContext: Context? = null
@@ -246,21 +230,6 @@ object AppConfig {
 
     fun getRoleTwoGroupId(): String = getManagedValue(KEY_ROLE_TWO_GROUP_ID) ?: ""
 
-    fun getZebraLockScreenUri(): String = getManagedOrDefault(KEY_ZEBRA_LOCKSCREEN_URI, DEFAULT_ZEBRA_LOCKSCREEN_URI)
-
-    fun getZebraCurrentSessionUri(): String = getManagedOrDefault(KEY_ZEBRA_CURRENT_SESSION_URI, DEFAULT_ZEBRA_CURRENT_SESSION_URI)
-
-    fun getZebraRoleField(): String = getManagedOrDefault(KEY_ZEBRA_ROLE_FIELD, DEFAULT_ZEBRA_ROLE_FIELD)
-
-    fun getZebraUserIdField(): String = getManagedOrDefault(KEY_ZEBRA_USER_ID_FIELD, DEFAULT_ZEBRA_USER_ID_FIELD)
-
-    fun getZebraEventTypeField(): String = getManagedOrDefault(KEY_ZEBRA_EVENT_TYPE_FIELD, DEFAULT_ZEBRA_EVENT_TYPE_FIELD)
-
-    fun getZebraLoggedInStateField(): String = getManagedOrDefault(KEY_ZEBRA_LOGGED_IN_STATE_FIELD, DEFAULT_ZEBRA_LOGGED_IN_STATE_FIELD)
-
-    fun getZebraLoginStateValue(): String = getManagedOrDefault(KEY_ZEBRA_LOGIN_STATE_VALUE, DEFAULT_ZEBRA_LOGIN_STATE_VALUE)
-
-    fun getZebraLogoutStateValue(): String = getManagedOrDefault(KEY_ZEBRA_LOGOUT_STATE_VALUE, DEFAULT_ZEBRA_LOGOUT_STATE_VALUE)
 
     fun getRoleMappings(): List<RoleGroupMapping> {
         val raw = prefs().getString(KEY_ROLE_MAPPINGS, "[]") ?: "[]"
@@ -301,7 +270,7 @@ object AppConfig {
     fun logManagedConfigSnapshot(source: String) {
         Logger.i(
             TAG,
-            "$source managed config -> apiKey=${isEsperApiKeyManaged()}, zebraOverrides=${hasManagedZebraOverrides()}"
+            "$source managed config -> apiKey=${isEsperApiKeyManaged()}"
         )
     }
 
@@ -325,7 +294,7 @@ object AppConfig {
 
         Logger.i(
             TAG,
-            "$source SECURE config -> roleOne=$roleOneStatus, roleTwo=$roleTwoStatus, apiKey=$apiKeyStatus, zebraOverrides=${hasManagedZebraOverrides()}"
+            "$source SECURE config -> roleOne=$roleOneStatus, roleTwo=$roleTwoStatus, apiKey=$apiKeyStatus"
         )
     }
 
@@ -407,18 +376,6 @@ object AppConfig {
         return getManagedValue(key) ?: defaultValue
     }
 
-    private fun hasManagedZebraOverrides(): Boolean {
-        return listOf(
-            KEY_ZEBRA_LOCKSCREEN_URI,
-            KEY_ZEBRA_CURRENT_SESSION_URI,
-            KEY_ZEBRA_ROLE_FIELD,
-            KEY_ZEBRA_USER_ID_FIELD,
-            KEY_ZEBRA_EVENT_TYPE_FIELD,
-            KEY_ZEBRA_LOGGED_IN_STATE_FIELD,
-            KEY_ZEBRA_LOGIN_STATE_VALUE,
-            KEY_ZEBRA_LOGOUT_STATE_VALUE
-        ).any { getManagedValue(it) != null }
-    }
 
     private fun managedRestrictions(): Bundle {
         val restrictionsManager = appContext().getSystemService(Context.RESTRICTIONS_SERVICE) as? RestrictionsManager
@@ -559,7 +516,7 @@ object AppConfig {
             "${android.os.Build.SERIAL}_${appContext().packageName}".take(32)
         } catch (e: Exception) {
             // Fallback salt if device info is not available
-            "default_salt_zebra_esper_bridge"
+            "default_salt_shared_device_auth"
         }
     }
 }
