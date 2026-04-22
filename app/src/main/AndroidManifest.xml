@@ -67,6 +67,13 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
+
+        <provider
+            android:name=".provider.SecureConfigProvider"
+            android:authorities="com.esper.authapp.secureconfigprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.MANAGE_DEVICE_POLICY_PROFILE_OWNER" />
     </application>
 
 </manifest>

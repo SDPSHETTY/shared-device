@@ -4,9 +4,11 @@ import android.content.Context
 import android.content.RestrictionsManager
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Base64
 import com.esper.authapp.util.Logger
 import org.json.JSONArray
 import org.json.JSONObject
+import java.security.MessageDigest
 
 object AppConfig {
     private const val TAG = "AppConfig"
@@ -41,6 +43,14 @@ object AppConfig {
     private const val KEY_CURRENT_USER_NAME = "current_user_name"
     private const val KEY_SESSION_START_TIME = "session_start_time"
     private const val KEY_CURRENT_GROUP_ID = "current_group_id"
+
+    // Security Enhancement Keys (Auto-hashing)
+    private const val KEY_ROLE_ONE_PASSWORD_HASH_LOCAL = "role_one_password_hash_local"
+    private const val KEY_ROLE_TWO_PASSWORD_HASH_LOCAL = "role_two_password_hash_local"
+    private const val KEY_API_KEY_OBFUSCATED_LOCAL = "api_key_obfuscated_local"
+    private const val KEY_LAST_MANAGED_PASSWORD_ONE = "last_managed_password_one"
+    private const val KEY_LAST_MANAGED_PASSWORD_TWO = "last_managed_password_two"
+    private const val KEY_LAST_MANAGED_API_KEY = "last_managed_api_key"
 
     private const val DEFAULT_BASE_URL = "https://espersalesdemo.esper.cloud"
     private const val DEFAULT_ZEBRA_LOCKSCREEN_URI = "content://com.zebra.mdna.els.provider/lockscreenstatus/state"
@@ -101,7 +111,37 @@ object AppConfig {
 
     fun getLocalEsperApiKey(): String = prefs().getString(KEY_API_KEY, "") ?: ""
 
-    fun getEsperApiKey(): String = getManagedValue(KEY_API_KEY) ?: getLocalEsperApiKey()
+    fun getEsperApiKey(): String {
+        // Check if we have obfuscated version locally
+        val obfuscated = prefs().getString(KEY_API_KEY_OBFUSCATED_LOCAL, null)
+        val lastManagedApiKey = prefs().getString(KEY_LAST_MANAGED_API_KEY, null)
+
+        // Get current plaintext from managed config
+        val currentManagedApiKey = getManagedValue(KEY_API_KEY)
+        val localApiKey = getLocalEsperApiKey()
+        val currentApiKey = currentManagedApiKey ?: localApiKey
+
+        // If we have obfuscated version and the API key hasn't changed, use it
+        if (obfuscated != null && currentApiKey == lastManagedApiKey) {
+            return deobfuscateApiKey(obfuscated)
+        }
+
+        // If API key is available, auto-upgrade to obfuscated storage
+        if (currentApiKey.isNotBlank()) {
+            Logger.i(TAG, "Auto-upgrading API key to obfuscated storage")
+            val obfuscatedKey = obfuscateApiKey(currentApiKey)
+
+            // Store the obfuscated version and track the source
+            prefs().edit()
+                .putString(KEY_API_KEY_OBFUSCATED_LOCAL, obfuscatedKey)
+                .putString(KEY_LAST_MANAGED_API_KEY, currentApiKey)
+                .apply()
+
+            return currentApiKey
+        }
+
+        return ""
+    }
 
     fun isEsperApiKeyManaged(): Boolean = getManagedValue(KEY_API_KEY) != null
 
@@ -127,9 +167,65 @@ object AppConfig {
 
     fun getRoleTwoLabel(): String = getManagedValue(KEY_ROLE_TWO_LABEL) ?: "Associate"
 
-    fun getRoleOnePassword(): String = getManagedValue(KEY_ROLE_ONE_PASSWORD) ?: ""
+    fun getRoleOnePassword(): String {
+        // Check if we have a local hash first
+        val localHash = prefs().getString(KEY_ROLE_ONE_PASSWORD_HASH_LOCAL, null)
+        val lastManagedPassword = prefs().getString(KEY_LAST_MANAGED_PASSWORD_ONE, null)
 
-    fun getRoleTwoPassword(): String = getManagedValue(KEY_ROLE_TWO_PASSWORD) ?: ""
+        // Get current plaintext from managed config
+        val currentManagedPassword = getManagedValue(KEY_ROLE_ONE_PASSWORD)
+
+        // If we have a hash and the managed password hasn't changed, use the hash
+        if (localHash != null && currentManagedPassword == lastManagedPassword) {
+            return "hash:$localHash"
+        }
+
+        // If managed password is available, auto-upgrade to hash
+        if (!currentManagedPassword.isNullOrBlank()) {
+            Logger.i(TAG, "Auto-upgrading role one password to hash")
+            val hash = hashPassword(currentManagedPassword)
+
+            // Store the hash and track the source password
+            prefs().edit()
+                .putString(KEY_ROLE_ONE_PASSWORD_HASH_LOCAL, hash)
+                .putString(KEY_LAST_MANAGED_PASSWORD_ONE, currentManagedPassword)
+                .apply()
+
+            return "hash:$hash"
+        }
+
+        return ""
+    }
+
+    fun getRoleTwoPassword(): String {
+        // Check if we have a local hash first
+        val localHash = prefs().getString(KEY_ROLE_TWO_PASSWORD_HASH_LOCAL, null)
+        val lastManagedPassword = prefs().getString(KEY_LAST_MANAGED_PASSWORD_TWO, null)
+
+        // Get current plaintext from managed config
+        val currentManagedPassword = getManagedValue(KEY_ROLE_TWO_PASSWORD)
+
+        // If we have a hash and the managed password hasn't changed, use the hash
+        if (localHash != null && currentManagedPassword == lastManagedPassword) {
+            return "hash:$localHash"
+        }
+
+        // If managed password is available, auto-upgrade to hash
+        if (!currentManagedPassword.isNullOrBlank()) {
+            Logger.i(TAG, "Auto-upgrading role two password to hash")
+            val hash = hashPassword(currentManagedPassword)
+
+            // Store the hash and track the source password
+            prefs().edit()
+                .putString(KEY_ROLE_TWO_PASSWORD_HASH_LOCAL, hash)
+                .putString(KEY_LAST_MANAGED_PASSWORD_TWO, currentManagedPassword)
+                .apply()
+
+            return "hash:$hash"
+        }
+
+        return ""
+    }
 
     fun getHomeGroupId(): String = prefs().getString(KEY_HOME_GROUP_ID, "") ?: ""
 
@@ -206,6 +302,30 @@ object AppConfig {
         Logger.i(
             TAG,
             "$source managed config -> apiKey=${isEsperApiKeyManaged()}, zebraOverrides=${hasManagedZebraOverrides()}"
+        )
+    }
+
+    /**
+     * Log secure configuration snapshot for reporting
+     * This logs hashed/masked values instead of plaintext for security
+     */
+    fun logSecureConfigSnapshot(source: String) {
+        val secureBundle = getSecureManagedRestrictionsForReporting()
+        val roleOneStatus = secureBundle.getString(KEY_ROLE_ONE_PASSWORD)?.let {
+            if (it.startsWith("hash:")) "SECURED_HASH" else "CONFIGURED"
+        } ?: "NOT_SET"
+
+        val roleTwoStatus = secureBundle.getString(KEY_ROLE_TWO_PASSWORD)?.let {
+            if (it.startsWith("hash:")) "SECURED_HASH" else "CONFIGURED"
+        } ?: "NOT_SET"
+
+        val apiKeyStatus = secureBundle.getString(KEY_API_KEY)?.let {
+            if (it.startsWith("obfuscated:")) "SECURED_OBFUSCATED" else "CONFIGURED"
+        } ?: "NOT_SET"
+
+        Logger.i(
+            TAG,
+            "$source SECURE config -> roleOne=$roleOneStatus, roleTwo=$roleTwoStatus, apiKey=$apiKeyStatus, zebraOverrides=${hasManagedZebraOverrides()}"
         )
     }
 
@@ -303,5 +423,143 @@ object AppConfig {
     private fun managedRestrictions(): Bundle {
         val restrictionsManager = appContext().getSystemService(Context.RESTRICTIONS_SERVICE) as? RestrictionsManager
         return restrictionsManager?.applicationRestrictions ?: Bundle.EMPTY
+    }
+
+    /**
+     * Get managed restrictions with sensitive values secured for reporting
+     * This function returns a Bundle with passwords and API keys hashed/masked
+     * for secure reporting back to management console
+     */
+    fun getSecureManagedRestrictionsForReporting(): Bundle {
+        val originalBundle = managedRestrictions()
+        val secureBundle = Bundle(originalBundle)
+
+        // Replace sensitive values with hashed versions for reporting
+        originalBundle.getString(KEY_ROLE_ONE_PASSWORD)?.let { plaintext ->
+            if (plaintext.isNotBlank()) {
+                val hash = hashPassword(plaintext)
+                secureBundle.putString(KEY_ROLE_ONE_PASSWORD, "hash:$hash")
+                Logger.i(TAG, "Secured role one password for reporting")
+            }
+        }
+
+        originalBundle.getString(KEY_ROLE_TWO_PASSWORD)?.let { plaintext ->
+            if (plaintext.isNotBlank()) {
+                val hash = hashPassword(plaintext)
+                secureBundle.putString(KEY_ROLE_TWO_PASSWORD, "hash:$hash")
+                Logger.i(TAG, "Secured role two password for reporting")
+            }
+        }
+
+        originalBundle.getString(KEY_API_KEY)?.let { plaintext ->
+            if (plaintext.isNotBlank()) {
+                val obfuscated = obfuscateApiKey(plaintext)
+                secureBundle.putString(KEY_API_KEY, "obfuscated:${obfuscated.take(16)}...")
+                Logger.i(TAG, "Secured API key for reporting")
+            }
+        }
+
+        return secureBundle
+    }
+
+    /**
+     * Get configuration status summary for secure reporting
+     * Returns status indicators instead of actual sensitive values
+     */
+    fun getConfigStatusForReporting(): Bundle {
+        val originalBundle = managedRestrictions()
+        val statusBundle = Bundle()
+
+        // Copy non-sensitive fields as-is
+        originalBundle.getString(KEY_ROLE_ONE_LABEL)?.let {
+            statusBundle.putString(KEY_ROLE_ONE_LABEL, it)
+        }
+        originalBundle.getString(KEY_ROLE_TWO_LABEL)?.let {
+            statusBundle.putString(KEY_ROLE_TWO_LABEL, it)
+        }
+        originalBundle.getString(KEY_ROLE_ONE_GROUP_ID)?.let {
+            statusBundle.putString(KEY_ROLE_ONE_GROUP_ID, it)
+        }
+        originalBundle.getString(KEY_ROLE_TWO_GROUP_ID)?.let {
+            statusBundle.putString(KEY_ROLE_TWO_GROUP_ID, it)
+        }
+
+        // Replace sensitive fields with status indicators
+        val roleOnePassword = originalBundle.getString(KEY_ROLE_ONE_PASSWORD)
+        statusBundle.putString(KEY_ROLE_ONE_PASSWORD,
+            if (roleOnePassword.isNullOrBlank()) "NOT_CONFIGURED" else "CONFIGURED_SECURELY"
+        )
+
+        val roleTwoPassword = originalBundle.getString(KEY_ROLE_TWO_PASSWORD)
+        statusBundle.putString(KEY_ROLE_TWO_PASSWORD,
+            if (roleTwoPassword.isNullOrBlank()) "NOT_CONFIGURED" else "CONFIGURED_SECURELY"
+        )
+
+        val apiKey = originalBundle.getString(KEY_API_KEY)
+        statusBundle.putString(KEY_API_KEY,
+            if (apiKey.isNullOrBlank()) "NOT_CONFIGURED" else "CONFIGURED_SECURELY"
+        )
+
+        Logger.i(TAG, "Generated secure config status for reporting")
+        return statusBundle
+    }
+
+    // Security Enhancement Helper Functions
+
+    fun hashPassword(password: String): String {
+        return try {
+            val digest = MessageDigest.getInstance("SHA-256")
+            // Add device-specific salt for additional security
+            digest.update(getDeviceSalt().toByteArray())
+            val hashBytes = digest.digest(password.toByteArray())
+            hashBytes.joinToString("") { "%02x".format(it) }
+        } catch (e: Exception) {
+            Logger.e(TAG, "Password hashing failed", e)
+            password // Fallback to plaintext on error
+        }
+    }
+
+    private fun obfuscateApiKey(apiKey: String): String {
+        return try {
+            val salt = getDeviceSalt()
+            val keyBytes = apiKey.toByteArray()
+            val saltBytes = salt.toByteArray()
+
+            val obfuscated = keyBytes.mapIndexed { index, byte ->
+                (byte.toInt() xor saltBytes[index % saltBytes.size].toInt()).toByte()
+            }.toByteArray()
+
+            Base64.encodeToString(obfuscated, Base64.DEFAULT)
+        } catch (e: Exception) {
+            Logger.e(TAG, "API key obfuscation failed", e)
+            apiKey // Fallback to plaintext on error
+        }
+    }
+
+    private fun deobfuscateApiKey(obfuscatedKey: String): String {
+        return try {
+            val salt = getDeviceSalt()
+            val obfuscatedBytes = Base64.decode(obfuscatedKey, Base64.DEFAULT)
+            val saltBytes = salt.toByteArray()
+
+            val deobfuscated = obfuscatedBytes.mapIndexed { index, byte ->
+                (byte.toInt() xor saltBytes[index % saltBytes.size].toInt()).toByte()
+            }.toByteArray()
+
+            String(deobfuscated)
+        } catch (e: Exception) {
+            Logger.e(TAG, "API key deobfuscation failed", e)
+            ""
+        }
+    }
+
+    private fun getDeviceSalt(): String {
+        return try {
+            // Use device-specific information as salt for additional security
+            "${android.os.Build.SERIAL}_${appContext().packageName}".take(32)
+        } catch (e: Exception) {
+            // Fallback salt if device info is not available
+            "default_salt_zebra_esper_bridge"
+        }
     }
 }

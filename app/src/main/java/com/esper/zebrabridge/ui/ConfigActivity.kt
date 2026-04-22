@@ -353,7 +353,18 @@ class ConfigActivity : AppCompatActivity() {
             return false
         }
 
-        if (enteredPassword != expectedPassword) {
+        // Check if expected password is a hash or plaintext
+        val isPasswordMatch = if (expectedPassword.startsWith("hash:")) {
+            // Hash-based comparison
+            val expectedHash = expectedPassword.removePrefix("hash:")
+            val enteredHash = AppConfig.hashPassword(enteredPassword)
+            enteredHash == expectedHash
+        } else {
+            // Fallback to plaintext comparison (for backward compatibility)
+            enteredPassword == expectedPassword
+        }
+
+        if (!isPasswordMatch) {
             val message = getString(R.string.login_auth_invalid)
             updateUiState(status = message, busy = false, support = getString(R.string.login_footer))
             // Clear password field and show error on failed authentication

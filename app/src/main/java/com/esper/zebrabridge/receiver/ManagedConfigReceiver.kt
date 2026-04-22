@@ -15,6 +15,7 @@ class ManagedConfigReceiver : BroadcastReceiver() {
 
         AppConfig.init(context)
         AppConfig.logManagedConfigSnapshot("Restrictions changed")
+        AppConfig.logSecureConfigSnapshot("Restrictions changed")
 
         if (AppConfig.isApiConfigured()) {
             Logger.i(TAG, "Managed config complete - starting bridge service")

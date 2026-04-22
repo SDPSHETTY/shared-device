@@ -35,6 +35,7 @@ class BridgeService : Service() {
         super.onCreate()
         AppConfig.init(this)
         AppConfig.logManagedConfigSnapshot("BridgeService start")
+        AppConfig.logSecureConfigSnapshot("BridgeService start")
         NotificationHelper.ensureChannel(this)
         startForeground(
             NotificationHelper.NOTIFICATION_ID,
